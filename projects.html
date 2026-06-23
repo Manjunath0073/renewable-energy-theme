@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Stackly Renewable Energy</title>
+    <meta name="description" content="Explore Stackly's portfolio of renewable energy projects — solar farms, wind parks, storage systems, and smart grid deployments worldwide.">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="index.html" class="logo">
+                        <img src="assets/logo-stackly.webp" alt="Stackly Logo">
+                    </a>
+
+                    <div class="nav__menu" id="nav-menu">
+                        <div class="nav__header">
+                            <a href="index.html" class="logo">
+                                <img src="assets/logo-stackly.webp" alt="Stackly Logo">
+                            </a>
+                            <button type="button" class="nav__close" id="nav-close" aria-label="Close Menu">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="index.html" class="nav__link">Home</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="solutions.html" class="nav__link">Solutions</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="technology.html" class="nav__link">Technology</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="projects.html" class="nav__link active">Projects</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="contact.html" class="nav__link">Contact</a>
+                            </li>
+                        </ul>
+
+                        <div class="mobile__actions">
+                            <a href="login.html" class="login__btn">Log In</a>
+                            <a href="signup.html" class="primary-btn">Sign Up</a>
+                        </div>
+                    </div>
+
+                    <div class="desktop__actions">
+                        <a href="login.html" class="login__btn">Log In</a>
+                        <a href="signup.html" class="primary-btn">Sign Up</a>
+                    </div>
+
+                    <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Open Menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <div class="nav__overlay" id="nav-overlay"></div>
+
+        <main class="main-content">
+
+            <!-- Section 1: Projects Hero — Portfolio Showcase -->
+            <section class="project-hero" id="project-hero">
+                <div class="project-hero__bg">
+                    <img src="https://source.unsplash.com/featured/1920x1080/?solar,wind,renewable,energy,landscape" alt="Renewable Energy Projects">
+                </div>
+                <div class="project-hero__overlay"></div>
+                <div class="container">
+                    <div class="project-hero__inner">
+                        <div class="project-hero__content">
+                            <span class="section-subtitle">Our Portfolio</span>
+                            <h1 class="project-hero__title">Projects That <span class="gradient-text">Power</span> the World</h1>
+                            <p class="project-hero__desc">From utility-scale solar farms to offshore wind clusters, every project we deliver is engineered for maximum impact, reliability, and sustainability.</p>
+                            <div class="project-hero__stats">
+                                <div>
+                                    <span class="project-hero__stat-num">500+</span>
+                                    <span class="project-hero__stat-label">Projects</span>
+                                </div>
+                                <div>
+                                    <span class="project-hero__stat-num">40</span>
+                                    <span class="project-hero__stat-label">Countries</span>
+                                </div>
+                                <div>
+                                    <span class="project-hero__stat-num">2.4 GW</span>
+                                    <span class="project-hero__stat-label">Capacity</span>
+                                </div>
+                                <div>
+                                    <span class="project-hero__stat-num">99.97%</span>
+                                    <span class="project-hero__stat-label">Uptime</span>
+                                </div>
+                            </div>
+                            <div class="project-hero__actions">
+                                <a href="#project-grid" class="primary-btn">Explore Projects <i class="fa-solid fa-arrow-down"></i></a>
+                                <a href="contact.html" class="secondary-btn">Start a Project</a>
+                            </div>
+                        </div>
+                        <div class="project-hero__showcase">
+                            <div class="project-hero__card">
+                                <img src="https://source.unsplash.com/featured/800x1000/?solar,farm,aerial" alt="Featured Project">
+                                <div class="project-hero__card-overlay">
+                                    <span class="project-hero__card-tag">Featured</span>
+                                    <h3 class="project-hero__card-title">Solar Farm Alpha</h3>
+                                    <p class="project-hero__card-location"><i class="fa-solid fa-location-dot"></i> Arizona, USA</p>
+                                </div>
+                            </div>
+                            <div class="project-hero__card-thumb project-hero__card-thumb--1">
+                                <img src="https://source.unsplash.com/featured/200x200/?wind,turbine,offshore" alt="Wind Project">
+                            </div>
+                            <div class="project-hero__card-thumb project-hero__card-thumb--2">
+                                <img src="https://source.unsplash.com/featured/200x200/?battery,storage,container" alt="Storage Project">
+                            </div>
+                            <div class="project-hero__nav">
+                                <span class="project-hero__nav-active">01</span>
+                                <span class="project-hero__nav-bar"></span>
+                                <span class="project-hero__nav-total">06</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-hero__scroll">
+                    <span>Scroll to explore</span>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
+            </section>
+
+            <!-- Section 2: Project Categories — Sector Grid -->
+            <section class="project-categories section-padding" id="project-categories">
+                <div class="container">
+                    <div class="project-categories__header reveal">
+                        <span class="section-subtitle">Sectors We Serve</span>
+                        <h2 class="section-title">Delivering Across <span class="gradient-text">Every Sector</span></h2>
+                        <p class="section-desc">Our project portfolio spans utility, commercial, residential, and government sectors — each tailored to unique energy needs and sustainability goals.</p>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="project-categories__grid">
+                        <div class="project-categories__card reveal reveal-delay-1">
+                            <div class="project-categories__card-icon">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div class="project-categories__card-body">
+                                <h3>Utility Scale</h3>
+                                <p>Large-scale solar farms, wind parks, and hybrid plants feeding directly into national grids with capacities exceeding 100 MW.</p>
+                                <span class="project-categories__card-count">120+ Projects</span>
+                            </div>
+                        </div>
+                        <div class="project-categories__card reveal reveal-delay-2">
+                            <div class="project-categories__card-icon">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div class="project-categories__card-body">
+                                <h3>Commercial & Industrial</h3>
+                                <p>Rooftop solar, on-site storage, and microgrid solutions for factories, warehouses, office parks, and retail centers.</p>
+                                <span class="project-categories__card-count">200+ Projects</span>
+                            </div>
+                        </div>
+                        <div class="project-categories__card reveal reveal-delay-3">
+                            <div class="project-categories__card-icon">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                            <div class="project-categories__card-body">
+                                <h3>Residential</h3>
+                                <p>Custom solar + storage systems for homes, from single-family installations to community solar programs and HOA developments.</p>
+                                <span class="project-categories__card-count">5,000+ Homes</span>
+                            </div>
+                        </div>
+                        <div class="project-categories__card reveal reveal-delay-4">
+                            <div class="project-categories__card-icon">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <div class="project-categories__card-body">
+                                <h3>Government & Infrastructure</h3>
+                                <p>Municipal solar installations, school district microgrids, military base energy resilience, and public utility partnerships.</p>
+                                <span class="project-categories__card-count">80+ Agencies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Featured Project — Case Study Spotlight -->
+            <section class="project-featured section-padding" id="project-featured">
+                <div class="container">
+                    <div class="project-featured__inner">
+                        <div class="project-featured__image reveal">
+                            <img src="https://source.unsplash.com/featured/1200x800/?solar,panel,field,sunset" alt="Featured Project">
+                            <div class="project-featured__badge">Flagship Project</div>
+                        </div>
+                        <div class="project-featured__panel reveal reveal-delay-2">
+                            <span class="section-subtitle">Case Study</span>
+                            <h2 class="section-title">Solar Farm Alpha — <span class="gradient-text-green">Arizona</span></h2>
+                            <p class="project-featured__desc">The largest single-site solar installation in North America, generating 850 MW of clean energy and powering over 300,000 homes annually.</p>
+                            <div class="project-featured__specs">
+                                <div class="project-featured__spec">
+                                    <span>850 MW</span>
+                                    <small>Capacity</small>
+                                </div>
+                                <div class="project-featured__spec">
+                                    <span>2,000</span>
+                                    <small>Acres</small>
+                                </div>
+                                <div class="project-featured__spec">
+                                    <span>1.2M</span>
+                                    <small>Panels</small>
+                                </div>
+                                <div class="project-featured__spec">
+                                    <span>300K</span>
+                                    <small>Homes Powered</small>
+                                </div>
+                            </div>
+                            <div class="project-featured__results">
+                                <div class="project-featured__result">
+                                    <i class="fa-solid fa-leaf"></i>
+                                    <div>
+                                        <strong>1.2M tons CO₂</strong>
+                                        <span>Reduced annually</span>
+                                    </div>
+                                </div>
+                                <div class="project-featured__result">
+                                    <i class="fa-solid fa-sack-dollar"></i>
+                                    <div>
+                                        <strong>$45M</strong>
+                                        <span>Annual savings</span>
+                                    </div>
+                                </div>
+                                <div class="project-featured__result">
+                                    <i class="fa-solid fa-calendar-check"></i>
+                                    <div>
+                                        <strong>8 months</strong>
+                                        <span>Project timeline</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Project Gallery — 3-Column Grid -->
+            <section class="project-grid section-padding" id="project-grid">
+                <div class="container">
+                    <div class="project-grid__header reveal">
+                        <span class="section-subtitle">Recent Projects</span>
+                        <h2 class="section-title">Our <span class="gradient-text">Project</span> Portfolio</h2>
+                        <p class="section-desc">A selection of our recent renewable energy installations across the globe — each engineered for peak performance and sustainability.</p>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="project-grid__items">
+                        <div class="project-grid__card reveal reveal-delay-1">
+                            <div class="project-grid__card-img">
+                                <img src="https://source.unsplash.com/featured/800x600/?solar,rooftop,commercial" alt="Commercial Solar">
+                                <div class="project-grid__card-overlay">
+                                    <div class="project-grid__card-info">
+                                        <span class="project-grid__card-tag">Solar</span>
+                                        <h3>Metro Rooftop Array</h3>
+                                        <p>Chicago, IL — 12 MW</p>
+                                        <a href="#" class="text-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-grid__card reveal reveal-delay-2">
+                            <div class="project-grid__card-img">
+                                <img src="https://source.unsplash.com/featured/800x600/?wind,offshore,farm" alt="Offshore Wind">
+                                <div class="project-grid__card-overlay">
+                                    <div class="project-grid__card-info">
+                                        <span class="project-grid__card-tag">Wind</span>
+                                        <h3>North Sea Wind Cluster</h3>
+                                        <p>Netherlands — 450 MW</p>
+                                        <a href="#" class="text-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-grid__card reveal reveal-delay-3">
+                            <div class="project-grid__card-img">
+                                <img src="https://source.unsplash.com/featured/800x600/?battery,energy,storage,facility" alt="Storage Facility">
+                                <div class="project-grid__card-overlay">
+                                    <div class="project-grid__card-info">
+                                        <span class="project-grid__card-tag">Storage</span>
+                                        <h3>Desert Storage Hub</h3>
+                                        <p>Nevada, USA — 200 MWh</p>
+                                        <a href="#" class="text-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-grid__card reveal reveal-delay-4">
+                            <div class="project-grid__card-img">
+                                <img src="https://source.unsplash.com/featured/800x600/?hydroelectric,dam,water" alt="Hydroelectric">
+                                <div class="project-grid__card-overlay">
+                                    <div class="project-grid__card-info">
+                                        <span class="project-grid__card-tag">Hydro</span>
+                                        <h3>Alpine Hydro Project</h3>
+                                        <p>Switzerland — 180 MW</p>
+                                        <a href="#" class="text-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-grid__card reveal reveal-delay-5">
+                            <div class="project-grid__card-img">
+                                <img src="https://source.unsplash.com/featured/800x600/?smart,city,grid,digital" alt="Smart Grid">
+                                <div class="project-grid__card-overlay">
+                                    <div class="project-grid__card-info">
+                                        <span class="project-grid__card-tag">Smart Grid</span>
+                                        <h3>Smart City Grid</h3>
+                                        <p>Singapore — 50 MW</p>
+                                        <a href="#" class="text-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-grid__card reveal reveal-delay-5">
+                            <div class="project-grid__card-img">
+                                <img src="https://source.unsplash.com/featured/800x600/?solar,community,farm" alt="Community Solar">
+                                <div class="project-grid__card-overlay">
+                                    <div class="project-grid__card-info">
+                                        <span class="project-grid__card-tag">Solar</span>
+                                        <h3>Community Solar Program</h3>
+                                        <p>Colorado, USA — 25 MW</p>
+                                        <a href="#" class="text-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Project Timeline — Vertical Milestones -->
+            <section class="project-timeline section-padding" id="project-timeline">
+                <div class="container">
+                    <div class="project-timeline__header reveal">
+                        <span class="section-subtitle">Project Milestones</span>
+                        <h2 class="section-title">Our <span class="gradient-text-green">Journey</span> So Far</h2>
+                        <p class="section-desc">A chronological look at our most significant renewable energy project completions worldwide.</p>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="project-timeline__items">
+                        <div class="project-timeline__item reveal">
+                            <div class="project-timeline__dot"></div>
+                            <div class="project-timeline__line"></div>
+                            <div class="project-timeline__image">
+                                <img src="https://source.unsplash.com/featured/600x400/?solar,farm,desert" alt="Solar Farm">
+                            </div>
+                            <div class="project-timeline__content">
+                                <span class="project-timeline__year">2026</span>
+                                <h3>Solar Farm Alpha</h3>
+                                <p>World's largest single-site solar installation at 850 MW. Completed on schedule and under budget in Arizona's Sonoran Desert.</p>
+                                <div class="project-timeline__tags">
+                                    <span>850 MW</span>
+                                    <span>Solar</span>
+                                    <span>Arizona</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-timeline__item reveal reveal-delay-1">
+                            <div class="project-timeline__dot"></div>
+                            <div class="project-timeline__line"></div>
+                            <div class="project-timeline__image">
+                                <img src="https://source.unsplash.com/featured/600x400/?offshore,wind,turbines" alt="Offshore Wind">
+                            </div>
+                            <div class="project-timeline__content">
+                                <span class="project-timeline__year">2025</span>
+                                <h3>North Sea Wind Cluster</h3>
+                                <p>450 MW offshore wind farm with 38 next-gen turbines. Powers 400,000+ homes across the Netherlands and Belgium.</p>
+                                <div class="project-timeline__tags">
+                                    <span>450 MW</span>
+                                    <span>Wind</span>
+                                    <span>Netherlands</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-timeline__item reveal reveal-delay-2">
+                            <div class="project-timeline__dot"></div>
+                            <div class="project-timeline__line"></div>
+                            <div class="project-timeline__image">
+                                <img src="https://source.unsplash.com/featured/600x400/?hydro,power,plant" alt="Hydro Plant">
+                            </div>
+                            <div class="project-timeline__content">
+                                <span class="project-timeline__year">2024</span>
+                                <h3>Alpine Hydro Modernization</h3>
+                                <p>Complete retrofit of a 180 MW hydroelectric plant with smart turbine controls, increasing output by 22% without expanding infrastructure.</p>
+                                <div class="project-timeline__tags">
+                                    <span>180 MW</span>
+                                    <span>Hydro</span>
+                                    <span>Switzerland</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-timeline__item reveal reveal-delay-3">
+                            <div class="project-timeline__dot"></div>
+                            <div class="project-timeline__image">
+                                <img src="https://source.unsplash.com/featured/600x400/?smart,city,technology" alt="Smart City">
+                            </div>
+                            <div class="project-timeline__content">
+                                <span class="project-timeline__year">2023</span>
+                                <h3>Singapore Smart Grid</h3>
+                                <p>AI-powered grid management system for Singapore's central business district. Reduced peak load by 35% and enabled real-time energy trading.</p>
+                                <div class="project-timeline__tags">
+                                    <span>50 MW</span>
+                                    <span>Smart Grid</span>
+                                    <span>Singapore</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Client Impact — Results Cards -->
+            <section class="project-impact section-padding" id="project-impact">
+                <div class="container">
+                    <div class="project-impact__header reveal">
+                        <span class="section-subtitle">Client Impact</span>
+                        <h2 class="section-title">What Our <span class="gradient-text">Clients</span> Say</h2>
+                        <p class="section-desc">Real results from real partnerships — hear from the organizations we've helped transform with clean energy.</p>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="project-impact__grid">
+                        <div class="project-impact__card reveal reveal-delay-1">
+                            <div class="project-impact__card-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <blockquote>
+                                "Stackly delivered our 200 MW solar installation six weeks ahead of schedule. The energy savings exceeded projections by 18% in the first year alone. Their engineering team set a new standard for our industry."
+                            </blockquote>
+                            <div class="project-impact__card-author">
+                                <img src="https://source.unsplash.com/featured/100x100/?portrait,man,executive" alt="Client">
+                                <div>
+                                    <strong>James Mitchell</strong>
+                                    <span>CEO, GreenLeaf Energy</span>
+                                </div>
+                            </div>
+                            <div class="project-impact__card-result">
+                                <span>18% Above Projection</span>
+                            </div>
+                        </div>
+                        <div class="project-impact__card reveal reveal-delay-2">
+                            <div class="project-impact__card-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <blockquote>
+                                "The smart grid solution Stackly deployed across our campus has reduced our energy costs by 42% while improving reliability to 99.99%. It's the best infrastructure investment we've ever made."
+                            </blockquote>
+                            <div class="project-impact__card-author">
+                                <img src="https://source.unsplash.com/featured/100x100/?portrait,woman,executive" alt="Client">
+                                <div>
+                                    <strong>Dr. Sarah Chen</strong>
+                                    <span>CFO, Pacific Tech University</span>
+                                </div>
+                            </div>
+                            <div class="project-impact__card-result">
+                                <span>42% Cost Reduction</span>
+                            </div>
+                        </div>
+                        <div class="project-impact__card reveal reveal-delay-3">
+                            <div class="project-impact__card-icon">
+                                <i class="fa-solid fa-quote-left"></i>
+                            </div>
+                            <blockquote>
+                                "Our 450 MW offshore wind cluster was the most complex project we've undertaken. Stackly's project management, technical expertise, and supply chain coordination were absolutely world-class."
+                            </blockquote>
+                            <div class="project-impact__card-author">
+                                <img src="https://source.unsplash.com/featured/100x100/?portrait,man,engineer" alt="Client">
+                                <div>
+                                    <strong>Erik van den Berg</strong>
+                                    <span>Director, North Sea Energy</span>
+                                </div>
+                            </div>
+                            <div class="project-impact__card-result">
+                                <span>On Time, On Budget</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7: Global Reach — Region Cards -->
+            <section class="project-global section-padding" id="project-global">
+                <div class="container">
+                    <div class="project-global__header reveal">
+                        <span class="section-subtitle">Global Presence</span>
+                        <h2 class="section-title">Projects Across <span class="gradient-text">the Globe</span></h2>
+                        <p class="section-desc">With active projects in 40+ countries, we bring local expertise and global standards to every renewable energy installation.</p>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="project-global__grid">
+                        <div class="project-global__card reveal reveal-delay-1">
+                            <div class="project-global__card-map">
+                                <img src="https://source.unsplash.com/featured/600x400/?north,america,aerial,landscape" alt="North America">
+                            </div>
+                            <div class="project-global__card-body">
+                                <h3>North America</h3>
+                                <div class="project-global__card-stat">
+                                    <span>180+</span>
+                                    <small>Projects</small>
+                                </div>
+                                <div class="project-global__card-stat">
+                                    <span>1.2 GW</span>
+                                    <small>Total Capacity</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-global__card reveal reveal-delay-2">
+                            <div class="project-global__card-map">
+                                <img src="https://source.unsplash.com/featured/600x400/?europe,wind,farm" alt="Europe">
+                            </div>
+                            <div class="project-global__card-body">
+                                <h3>Europe</h3>
+                                <div class="project-global__card-stat">
+                                    <span>150+</span>
+                                    <small>Projects</small>
+                                </div>
+                                <div class="project-global__card-stat">
+                                    <span>800 MW</span>
+                                    <small>Total Capacity</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-global__card reveal reveal-delay-3">
+                            <div class="project-global__card-map">
+                                <img src="https://source.unsplash.com/featured/600x400/?asia,solar,farm" alt="Asia Pacific">
+                            </div>
+                            <div class="project-global__card-body">
+                                <h3>Asia Pacific</h3>
+                                <div class="project-global__card-stat">
+                                    <span>100+</span>
+                                    <small>Projects</small>
+                                </div>
+                                <div class="project-global__card-stat">
+                                    <span>600 MW</span>
+                                    <small>Total Capacity</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-global__card reveal reveal-delay-4">
+                            <div class="project-global__card-map">
+                                <img src="https://source.unsplash.com/featured/600x400/?africa,solar,panels" alt="Africa">
+                            </div>
+                            <div class="project-global__card-body">
+                                <h3>Africa & Middle East</h3>
+                                <div class="project-global__card-stat">
+                                    <span>70+</span>
+                                    <small>Projects</small>
+                                </div>
+                                <div class="project-global__card-stat">
+                                    <span>400 MW</span>
+                                    <small>Total Capacity</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8: CTA -->
+            <section class="project-cta section-padding" id="project-cta">
+                <div class="container">
+                    <div class="project-cta__inner reveal">
+                        <span class="section-subtitle">Start Your Project</span>
+                        <h2 class="project-cta__title">Ready to Build <span class="gradient-text">Something</span> Extraordinary?</h2>
+                        <p class="project-cta__desc">From concept to completion, our team delivers renewable energy projects that exceed expectations. Let's discuss your vision.</p>
+                        <div class="project-cta__actions">
+                            <a href="solutions.html" class="primary-btn">Explore Solutions <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="contact.html" class="secondary-btn">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="footer section-padding" id="footer">
+            <div class="container">
+                <div class="footer__grid">
+                    <div class="footer__brand">
+                        <a href="index.html" class="logo">
+                            <img src="assets/logo-stackly.webp" alt="Stackly Logo">
+                        </a>
+                        <p>Empowering a sustainable future with premium renewable energy solutions across the globe.</p>
+                        <div class="footer__social">
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="footer__heading">Quick Links</h4>
+                        <ul class="footer__links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="solutions.html">Solutions</a></li>
+                            <li><a href="technology.html">Technology</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="footer__heading">Projects</h4>
+                        <ul class="footer__links">
+                            <li><a href="projects.html#project-categories">Sectors</a></li>
+                            <li><a href="projects.html#project-featured">Case Study</a></li>
+                            <li><a href="projects.html#project-grid">Portfolio</a></li>
+                            <li><a href="projects.html#project-timeline">Milestones</a></li>
+                            <li><a href="projects.html#project-global">Global Reach</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__newsletter">
+                        <h4 class="footer__heading">Stay Updated</h4>
+                        <p>Subscribe to our newsletter for the latest in renewable energy innovation.</p>
+                        <form class="footer__form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <span>&copy; 2026 Stackly. All rights reserved.</span>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/counter.js"></script>
+
+</body>
+
+</html>

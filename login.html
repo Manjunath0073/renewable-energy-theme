@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In — Stackly Renewable Energy</title>
+    <meta name="description" content="Sign in to your Stackly account. Access your renewable energy dashboard, monitor energy production, and manage your portfolio.">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <!-- Form Panel -->
+        <div class="auth-form-wrap">
+            <div class="auth-form">
+                <div class="auth-form__header">
+                    <a href="index.html" class="auth-form__logo-mobile">
+                        <img src="assets/logo-stackly.webp" alt="Stackly Logo" width="200" height="44">
+                    </a>
+                    <p class="section-subtitle">Sign In</p>
+                    <h2>Welcome back</h2>
+                    <p>Sign in to access your renewable energy dashboard.</p>
+                </div>
+
+                <div class="auth-form__login-error" id="loginError">
+                    <i class="fa-regular fa-circle-exclamation"></i>
+                    <span id="loginErrorMsg">Invalid credentials. Please try again.</span>
+                </div>
+
+                <form id="loginForm" novalidate autocomplete="off">
+                    <div class="auth-form__role">
+                        <span class="auth-form__role-label">I am a <span class="text-accent">*</span></span>
+                        <div class="auth-form__role-options">
+                            <div class="auth-form__role-option">
+                                <input type="radio" name="role" id="loginRoleUser" value="user">
+                                <label for="loginRoleUser"><i class="fa-regular fa-user"></i> User</label>
+                            </div>
+                            <div class="auth-form__role-option">
+                                <input type="radio" name="role" id="loginRoleAdmin" value="admin">
+                                <label for="loginRoleAdmin"><i class="fa-regular fa-crown"></i> Admin</label>
+                            </div>
+                        </div>
+                        <div class="auth-form__role-error" id="loginRoleError">Please select a role.</div>
+                    </div>
+
+                    <div class="auth-form__group">
+                        <label for="loginEmail">Email <span>*</span></label>
+                        <input type="email" name="email" id="loginEmail" placeholder="you@example.com" autocomplete="email">
+                        <div class="auth-form__error" id="loginEmailError">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="auth-form__group">
+                        <label for="loginPassword">Password <span>*</span></label>
+                        <div class="auth-form__input-wrap">
+                            <input type="password" name="password" id="loginPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly')">
+                            <button type="button" class="auth-form__toggle-pwd" id="loginTogglePwd" aria-label="Toggle password visibility">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="auth-form__error" id="loginPasswordError">Password must be at least 6 characters.</div>
+                    </div>
+
+                    <div class="auth-form__row">
+                        <label class="auth-form__checkbox">
+                            <input type="checkbox" id="loginRemember">
+                            Remember me
+                        </label>
+                        <a href="#" class="auth-form__forgot">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-form__submit primary-btn">
+                        <i class="fa-regular fa-arrow-right-to-bracket"></i>
+                        Sign In
+                    </button>
+
+                    <p class="auth-form__footer">
+                        Don't have an account? <a href="signup.html">Create one</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Brand Panel -->
+        <div class="auth-brand">
+            <div class="auth-brand__bg">
+                <img src="https://source.unsplash.com/featured/?solar-panel-wind-turbine" alt="" loading="lazy">
+            </div>
+            <div class="auth-brand__overlay"></div>
+            <div class="auth-brand__pattern"></div>
+
+            <div class="auth-brand__decor auth-brand__decor--1"></div>
+            <div class="auth-brand__decor auth-brand__decor--2"></div>
+            <div class="auth-brand__decor auth-brand__decor--3"></div>
+
+            <div class="auth-brand__icon auth-brand__icon--sun"><i class="fa-regular fa-sun"></i></div>
+            <div class="auth-brand__icon auth-brand__icon--wind"><i class="fa-regular fa-wind"></i></div>
+            <div class="auth-brand__icon auth-brand__icon--leaf"><i class="fa-regular fa-leaf"></i></div>
+
+            <div class="auth-brand__content">
+                <a href="index.html" class="auth-brand__logo">
+                    <img src="assets/logo-stackly.webp" alt="Stackly Logo" width="200" height="44">
+                </a>
+                <h1 class="auth-brand__title">Welcome back to <span>clean energy</span></h1>
+                <p class="auth-brand__desc">Access your personalized dashboard, monitor real-time energy production across your portfolio, track sustainability goals, and make data-driven decisions — all from one place.</p>
+                <div class="auth-brand__stats">
+                    <div class="auth-brand__stat">
+                        <span>12.4 GW</span>
+                        <small>Energy Generated</small>
+                    </div>
+                    <div class="auth-brand__stat">
+                        <span>98.2%</span>
+                        <small>System Uptime</small>
+                    </div>
+                    <div class="auth-brand__stat">
+                        <span>8.6M</span>
+                        <small>Tons CO₂ Saved</small>
+                    </div>
+                </div>
+                <a href="index.html" class="auth-brand__home">
+                    <i class="fa-regular fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        (function () {
+            const form = document.getElementById('loginForm');
+            const emailInput = document.getElementById('loginEmail');
+            const passwordInput = document.getElementById('loginPassword');
+            const roleInputs = document.querySelectorAll('input[name="role"]');
+            const emailError = document.getElementById('loginEmailError');
+            const passwordError = document.getElementById('loginPasswordError');
+            const roleError = document.getElementById('loginRoleError');
+            const loginError = document.getElementById('loginError');
+            const loginErrorMsg = document.getElementById('loginErrorMsg');
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            function setFieldState(input, errEl, valid) {
+                if (valid === true) {
+                    input.classList.remove('error');
+                    input.classList.add('valid');
+                    errEl.style.display = 'none';
+                } else if (valid === false) {
+                    input.classList.add('error');
+                    input.classList.remove('valid');
+                    errEl.style.display = 'block';
+                } else {
+                    input.classList.remove('error', 'valid');
+                    errEl.style.display = 'none';
+                }
+            }
+
+            function getRole() {
+                for (const r of roleInputs) if (r.checked) return r.value;
+                return null;
+            }
+
+            function validate() {
+                let ok = true;
+                loginError.classList.remove('show');
+
+                if (!getRole()) { roleError.style.display = 'block'; ok = false; }
+                else { roleError.style.display = 'none'; }
+
+                const email = emailInput.value.trim();
+                if (!email || !emailRegex.test(email)) { setFieldState(emailInput, emailError, false); ok = false; }
+                else { setFieldState(emailInput, emailError, true); }
+
+                const pwd = passwordInput.value.trim();
+                if (!pwd || pwd.length < 6) { setFieldState(passwordInput, passwordError, false); ok = false; }
+                else { setFieldState(passwordInput, passwordError, true); }
+
+                return ok;
+            }
+
+            emailInput.addEventListener('blur', function () {
+                const v = this.value.trim();
+                if (!v) { setFieldState(this, emailError, null); }
+                else { setFieldState(this, emailError, emailRegex.test(v)); }
+            });
+
+            passwordInput.addEventListener('blur', function () {
+                const v = this.value.trim();
+                if (!v) { setFieldState(this, passwordError, null); }
+                else { setFieldState(this, passwordError, v.length >= 6); }
+            });
+
+            roleInputs.forEach(r => r.addEventListener('change', () => { roleError.style.display = 'none'; }));
+            emailInput.addEventListener('input', () => loginError.classList.remove('show'));
+            passwordInput.addEventListener('input', () => loginError.classList.remove('show'));
+
+            function setupPwdToggle(btnId, inputId) {
+                const btn = document.getElementById(btnId);
+                const inp = document.getElementById(inputId);
+                if (!btn || !inp) return;
+                btn.addEventListener('click', function () {
+                    const show = inp.getAttribute('type') === 'password';
+                    inp.setAttribute('type', show ? 'text' : 'password');
+                    this.querySelector('i').className = show ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+                });
+            }
+            setupPwdToggle('loginTogglePwd', 'loginPassword');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!validate()) return;
+
+                loginError.classList.remove('show');
+                window.location.href = 'index.html';
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

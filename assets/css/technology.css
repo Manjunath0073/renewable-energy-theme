@@ -1,0 +1,1421 @@
+/* ============================================
+   TECHNOLOGY PAGE — Premium Styles
+   ============================================ */
+
+/* --- Section 1: Tech Hero — Frame Dashboard --- */
+.tech-hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a1a14 0%, #0f2e24 40%, #1b4d3e 100%);
+    position: relative;
+    padding-top: 88px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.tech-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.tech-hero__bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(10,26,20,0.92) 0%, rgba(15,46,36,0.85) 60%, rgba(27,77,62,0.75) 100%);
+}
+
+.tech-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tech-hero__grid-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image:
+        linear-gradient(rgba(212,163,115,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,163,115,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.tech-hero__corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-color: rgba(212,163,115,0.3);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.tech-hero__corner--tl {
+    top: 100px;
+    left: 20px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+.tech-hero__corner--tr {
+    top: 100px;
+    right: 20px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+}
+
+.tech-hero__corner--bl {
+    bottom: 100px;
+    left: 20px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+}
+
+.tech-hero__corner--br {
+    bottom: 100px;
+    right: 20px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+}
+
+.tech-hero__inner {
+    position: relative;
+    z-index: 2;
+}
+
+.tech-hero__frame {
+    border: 1px solid rgba(212,163,115,0.15);
+    border-radius: var(--radius-lg);
+    padding: 50px 60px;
+    position: relative;
+    background: rgba(10,26,20,0.6);
+    backdrop-filter: blur(12px);
+    animation: techHeroGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes techHeroGlow {
+    0% { box-shadow: 0 0 40px rgba(212,163,115,0.05), inset 0 0 40px rgba(212,163,115,0.02); }
+    100% { box-shadow: 0 0 60px rgba(212,163,115,0.12), inset 0 0 60px rgba(212,163,115,0.04); }
+}
+
+.tech-hero__frame-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 6px 16px;
+    border: 1px solid rgba(212,163,115,0.2);
+    border-radius: 999px;
+    margin-bottom: 30px;
+}
+
+.tech-hero__frame-badge::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.tech-hero__content {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 50px;
+    align-items: center;
+}
+
+.tech-hero__title {
+    font-size: 56px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.tech-hero__desc {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    max-width: 560px;
+    margin-bottom: 32px;
+    line-height: 1.8;
+}
+
+.tech-hero__actions {
+    display: flex;
+    gap: 16px;
+}
+
+.tech-hero__actions .primary-btn {
+    background: var(--accent);
+    color: var(--gray-900);
+}
+
+.tech-hero__actions .primary-btn:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.tech-hero__actions .secondary-btn {
+    border-color: rgba(255,255,255,0.25);
+    color: var(--white);
+}
+
+.tech-hero__actions .secondary-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(212,163,115,0.1);
+}
+
+.tech-hero__card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.tech-hero__card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.tech-hero__card-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+.tech-hero__card-body {
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tech-hero__card-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tech-hero__card-value {
+    font-family: var(--heading-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.tech-hero__card-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+}
+
+.tech-hero__status-bar {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.tech-hero__status-bar span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tech-hero__status-bar .fa-circle {
+    font-size: 8px;
+    color: #22c55e;
+    animation: pulseDot 2s ease-in-out infinite;
+}
+
+.tech-hero__status-bar .fa-regular,
+.tech-hero__status-bar .fa-solid {
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+}
+
+/* --- Section 2: Core Technologies — Monitor Grid --- */
+.tech-core {
+    background: var(--cream);
+}
+
+.tech-core__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tech-core__header .section-desc {
+    margin-inline: auto;
+}
+
+.tech-core__header .section-divider {
+    margin-inline: auto;
+    margin-top: 24px;
+}
+
+.tech-core__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.tech-core__card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.tech-core__card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tech-core__card-screen {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid var(--cream-dark);
+}
+
+.tech-core__card-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(27,77,62,0.3));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.tech-core__card-screen::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--primary);
+    z-index: 2;
+}
+
+.tech-core__card-screen img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.tech-core__card:hover .tech-core__card-screen img {
+    transform: scale(1.05);
+}
+
+.tech-core__card-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--heading-font);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--primary);
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.tech-core__card-body {
+    padding: 28px 30px 32px;
+}
+
+.tech-core__card-body p {
+    font-size: 15px;
+    color: var(--gray-500);
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.tech-core__card-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* --- Section 3: Solar Deep Dive — Blueprint Specs --- */
+.tech-solar {
+    background: var(--primary-dark);
+    position: relative;
+}
+
+.tech-solar__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.tech-solar__blueprint {
+    position: relative;
+}
+
+.tech-solar__blueprint-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        linear-gradient(rgba(212,163,115,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,163,115,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(212,163,115,0.1);
+}
+
+.tech-solar__blueprint-content {
+    position: relative;
+    z-index: 1;
+    padding: 50px;
+}
+
+.tech-solar__blueprint-content .section-subtitle {
+    color: var(--accent);
+}
+
+.tech-solar__blueprint-content .section-title {
+    color: var(--white);
+}
+
+.tech-solar__desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 520px;
+}
+
+.tech-solar__features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tech-solar__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.tech-solar__feature i {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212,163,115,0.12);
+    color: var(--accent);
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.tech-solar__feature strong {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 2px;
+}
+
+.tech-solar__feature span {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+}
+
+.tech-solar__specs {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+    padding: 50px;
+    position: sticky;
+    top: 100px;
+}
+
+.tech-solar__specs-title {
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.tech-solar__specs-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-solar__spec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.tech-solar__spec:last-child {
+    border-bottom: none;
+}
+
+.tech-solar__spec-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+}
+
+.tech-solar__spec-value {
+    font-family: var(--heading-font);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* --- Section 4: Wind Technology — Evolution Timeline --- */
+.tech-wind {
+    background: var(--cream);
+}
+
+.tech-wind__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tech-wind__header .section-desc {
+    margin-inline: auto;
+}
+
+.tech-wind__header .section-divider {
+    margin-inline: auto;
+    margin-top: 24px;
+}
+
+.tech-wind__timeline {
+    display: flex;
+    gap: 30px;
+    position: relative;
+    padding-top: 20px;
+}
+
+.tech-wind__line {
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);
+    z-index: 0;
+}
+
+.tech-wind__milestone {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.tech-wind__milestone::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border: 4px solid var(--cream);
+    border-radius: 50%;
+    position: absolute;
+    top: 53px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    box-shadow: 0 0 0 2px var(--accent);
+    animation: timelinePulse 3s ease-in-out infinite;
+}
+
+.tech-wind__milestone:nth-child(2)::before { animation-delay: 0.75s; }
+.tech-wind__milestone:nth-child(3)::before { animation-delay: 1.5s; }
+.tech-wind__milestone:nth-child(4)::before { animation-delay: 2.25s; }
+
+@keyframes timelinePulse {
+    0%, 100% { box-shadow: 0 0 0 2px var(--accent); }
+    50% { box-shadow: 0 0 0 6px rgba(212,163,115,0.3); }
+}
+
+.tech-wind__milestone-img {
+    width: 100%;
+    height: 180px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.tech-wind__milestone-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tech-wind__milestone:hover .tech-wind__milestone-img img {
+    transform: scale(1.08);
+}
+
+.tech-wind__year {
+    display: inline-block;
+    font-family: var(--heading-font);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 6px;
+    letter-spacing: -1px;
+}
+
+.tech-wind__milestone h4 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.tech-wind__milestone p {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.6;
+    margin-inline: auto;
+}
+
+/* --- Section 5: Energy Storage — Flip Cards --- */
+.tech-storage {
+    background: var(--primary-dark);
+    position: relative;
+}
+
+.tech-storage__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tech-storage__header .section-subtitle {
+    color: var(--accent);
+}
+
+.tech-storage__header .section-title {
+    color: var(--white);
+}
+
+.tech-storage__header .section-desc {
+    margin-inline: auto;
+    color: rgba(255,255,255,0.55);
+}
+
+.tech-storage__header .section-divider {
+    margin-inline: auto;
+    margin-top: 24px;
+}
+
+.tech-storage__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.tech-storage__card {
+    perspective: 1200px;
+    height: 380px;
+}
+
+.tech-storage__card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+}
+
+.tech-storage__card:hover .tech-storage__card-inner {
+    transform: rotateY(180deg);
+}
+
+.tech-storage__card-front,
+.tech-storage__card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.tech-storage__card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    background: var(--white);
+}
+
+.tech-storage__card-front img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.tech-storage__card-front::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(15,46,36,0.85));
+    z-index: 1;
+}
+
+.tech-storage__card-front h4 {
+    position: relative;
+    z-index: 2;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.tech-storage__card-front span {
+    position: relative;
+    z-index: 2;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.tech-storage__card-back {
+    background: var(--primary);
+    padding: 30px;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tech-storage__card-back h4 {
+    font-size: 20px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tech-storage__card-back ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tech-storage__card-back ul li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    display: flex;
+    justify-content: space-between;
+}
+
+.tech-storage__card-back ul li strong {
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* --- Section 6: Smart Grid & AI — Network Topology --- */
+.tech-grid {
+    background: var(--cream);
+}
+
+.tech-grid__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tech-grid__features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.tech-grid__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.tech-grid__feature i {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(27,77,62,0.08);
+    color: var(--primary);
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.tech-grid__feature strong {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 16px;
+    color: var(--gray-900);
+    margin-bottom: 2px;
+}
+
+.tech-grid__feature span {
+    font-size: 14px;
+    color: var(--gray-500);
+}
+
+.tech-grid__network {
+    position: relative;
+    height: 460px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.tech-grid__network-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 30% 50%, rgba(27,77,62,0.04) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(212,163,115,0.04) 0%, transparent 50%),
+        radial-gradient(circle at 50% 70%, rgba(27,77,62,0.03) 0%, transparent 50%);
+}
+
+.tech-grid__node {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-900);
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(27,77,62,0.1);
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.tech-grid__node:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(27,77,62,0.18);
+}
+
+.tech-grid__node i {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.tech-grid__node--1 {
+    top: 30px;
+    left: 30px;
+    animation: nodeFloat 4s ease-in-out infinite;
+}
+
+.tech-grid__node--2 {
+    top: 20px;
+    right: 30px;
+    animation: nodeFloat 4s ease-in-out infinite 0.5s;
+}
+
+.tech-grid__node--3 {
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: nodeFloat 4s ease-in-out infinite 1s;
+}
+
+.tech-grid__node--4 {
+    bottom: 20px;
+    left: 30px;
+    animation: nodeFloat 4s ease-in-out infinite 1.5s;
+}
+
+.tech-grid__node--5 {
+    bottom: 20px;
+    right: 30px;
+    animation: nodeFloat 4s ease-in-out infinite 2s;
+}
+
+@keyframes nodeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.tech-grid__node--3 {
+    transform: translateX(-50%);
+}
+
+.tech-grid__node--3:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.tech-grid__connection {
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+    background-size: 200% 100%;
+    animation: connectionFlow 3s linear infinite;
+}
+
+.tech-grid__connection--1 {
+    top: 70px;
+    left: 115px;
+    width: calc(100% - 115px - 115px);
+    height: 2px;
+}
+
+.tech-grid__connection--2 {
+    top: 105px;
+    left: 115px;
+    width: 2px;
+    height: 200px;
+}
+
+.tech-grid__connection--3 {
+    top: 105px;
+    right: 115px;
+    width: 2px;
+    height: 200px;
+}
+
+.tech-grid__connection--4 {
+    bottom: 108px;
+    left: 115px;
+    width: calc(50% - 115px);
+    height: 2px;
+}
+
+.tech-grid__connection--5 {
+    bottom: 108px;
+    left: 50%;
+    width: calc(50% - 115px);
+    height: 2px;
+}
+
+@keyframes connectionFlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+/* --- Section 7: R&D Innovation — Journal Cards --- */
+.tech-rd {
+    background: var(--white);
+}
+
+.tech-rd__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tech-rd__header .section-desc {
+    margin-inline: auto;
+}
+
+.tech-rd__header .section-divider {
+    margin-inline: auto;
+    margin-top: 24px;
+}
+
+.tech-rd__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.tech-rd__card {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.tech-rd__card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.tech-rd__card-img {
+    height: 220px;
+    overflow: hidden;
+}
+
+.tech-rd__card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.tech-rd__card:hover .tech-rd__card-img img {
+    transform: scale(1.05);
+}
+
+.tech-rd__card-body {
+    padding: 30px;
+}
+
+.tech-rd__card-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 14px;
+}
+
+.tech-rd__card-meta span {
+    font-size: 12px;
+    color: var(--gray-500);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tech-rd__card-body h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    line-height: 1.35;
+}
+
+.tech-rd__card-body > p {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.tech-rd__card-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--gray-200);
+}
+
+.tech-rd__card-stats div {
+    text-align: center;
+}
+
+.tech-rd__card-stats span {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.tech-rd__card-stats small {
+    font-size: 11px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Section 8: Technology Comparison — Spec Table --- */
+.tech-specs {
+    background: var(--cream);
+}
+
+.tech-specs__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tech-specs__header .section-desc {
+    margin-inline: auto;
+}
+
+.tech-specs__header .section-divider {
+    margin-inline: auto;
+    margin-top: 24px;
+}
+
+.tech-specs__table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.tech-specs__table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.tech-specs__table thead {
+    background: var(--primary-dark);
+}
+
+.tech-specs__table thead th {
+    padding: 20px 24px;
+    font-family: var(--heading-font);
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    text-align: left;
+    letter-spacing: 0.5px;
+}
+
+.tech-specs__table thead th.highlight {
+    color: var(--accent);
+}
+
+.tech-specs__table thead th:first-child {
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+}
+
+.tech-specs__table tbody td {
+    padding: 16px 24px;
+    font-size: 15px;
+    color: var(--gray-500);
+    border-bottom: 1px solid rgba(27,77,62,0.04);
+}
+
+.tech-specs__table tbody td:first-child {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.tech-specs__table tbody td.highlight {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.tech-specs__table tbody tr {
+    transition: background 0.3s ease;
+}
+
+.tech-specs__table tbody tr:hover {
+    background: rgba(27,77,62,0.03);
+}
+
+.tech-specs__table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Section 9: CTA --- */
+.tech-cta {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.tech-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(212,163,115,0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.tech-cta__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+.tech-cta__inner .section-subtitle {
+    color: var(--accent);
+}
+
+.tech-cta__title {
+    font-size: 52px;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.tech-cta__desc {
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.tech-cta__stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.tech-cta__stats div {
+    text-align: center;
+}
+
+.tech-cta__stats span {
+    display: block;
+    font-family: var(--heading-font);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.tech-cta__stats small {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+}
+
+.tech-cta__actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.tech-cta__actions .primary-btn {
+    background: var(--accent);
+    color: var(--gray-900);
+}
+
+.tech-cta__actions .primary-btn:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+}
+
+.tech-cta__actions .secondary-btn {
+    border-color: rgba(255,255,255,0.25);
+    color: var(--white);
+}
+
+.tech-cta__actions .secondary-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(212,163,115,0.1);
+}
+
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* --- max-width: 1199px --- */
+@media (max-width: 1199px) {
+    .tech-hero__title { font-size: 44px; }
+    .tech-hero__content { grid-template-columns: 1fr 240px; gap: 30px; }
+
+    .tech-solar__inner { gap: 40px; }
+    .tech-solar__specs { padding: 36px; }
+
+    .tech-wind__milestone-img { height: 150px; }
+
+    .tech-grid__network { height: 400px; }
+
+    .tech-cta__title { font-size: 42px; }
+    .tech-cta__stats { gap: 36px; }
+    .tech-cta__stats span { font-size: 30px; }
+}
+
+/* --- max-width: 991px --- */
+@media (max-width: 991px) {
+    .tech-hero__title { font-size: 36px; }
+    .tech-hero__content { grid-template-columns: 1fr; gap: 30px; }
+    .tech-hero__card { max-width: 280px; }
+    .tech-hero__frame { padding: 36px 30px; }
+    .tech-hero__status-bar { flex-wrap: wrap; gap: 16px; }
+
+    .tech-core__grid { grid-template-columns: 1fr; }
+
+    .tech-solar__inner { grid-template-columns: 1fr; gap: 40px; }
+    .tech-solar__specs { position: static; }
+
+    .tech-wind__timeline { flex-direction: column; gap: 30px; }
+    .tech-wind__line { display: none; }
+    .tech-wind__milestone::before { display: none; }
+    .tech-wind__milestone { display: grid; grid-template-columns: 120px 1fr; gap: 24px; text-align: left; align-items: center; }
+    .tech-wind__milestone-img { height: 100px; margin-bottom: 0; }
+
+    .tech-storage__grid { grid-template-columns: repeat(2, 1fr); }
+
+    .tech-grid__inner { grid-template-columns: 1fr; gap: 40px; }
+    .tech-grid__network { height: 360px; }
+
+    .tech-rd__grid { grid-template-columns: 1fr; }
+
+    .tech-cta__title { font-size: 34px; }
+    .tech-cta__stats { flex-wrap: wrap; gap: 24px; }
+
+    .tech-hero__corner { display: none; }
+}
+
+/* --- max-width: 767px --- */
+@media (max-width: 767px) {
+    .tech-hero__title { font-size: 30px; }
+    .tech-hero__desc { font-size: 16px; }
+    .tech-hero__frame { padding: 28px 20px; }
+    .tech-hero__content { gap: 24px; }
+    .tech-hero__card { max-width: 100%; }
+    .tech-hero__actions { flex-direction: column; }
+    .tech-hero__actions .primary-btn,
+    .tech-hero__actions .secondary-btn { width: 100%; justify-content: center; }
+
+    .tech-core__header { margin-bottom: 40px; }
+
+    .tech-solar__blueprint-content { padding: 30px 24px; }
+    .tech-solar__specs { padding: 28px 24px; }
+
+    .tech-wind__milestone { grid-template-columns: 1fr; gap: 12px; }
+    .tech-wind__milestone-img { height: 160px; margin-bottom: 0; }
+
+    .tech-storage__grid { grid-template-columns: 1fr; }
+    .tech-storage__card { height: 340px; }
+
+    .tech-grid__network { height: 300px; }
+    .tech-grid__node { width: 64px; height: 64px; }
+    .tech-grid__node i { font-size: 18px; }
+    .tech-grid__node span { display: none; }
+    .tech-grid__connection--1 { top: 55px; left: 90px; width: calc(100% - 90px - 90px); height: 2px; }
+    .tech-grid__connection--2 { top: 85px; left: 90px; width: 2px; height: 130px; }
+    .tech-grid__connection--3 { top: 85px; right: 90px; width: 2px; height: 130px; }
+    .tech-grid__connection--4 { bottom: 80px; left: 90px; width: calc(50% - 90px); height: 2px; }
+    .tech-grid__connection--5 { bottom: 80px; left: 50%; width: calc(50% - 90px); height: 2px; }
+
+    .tech-rd__card-meta { gap: 12px; flex-wrap: wrap; }
+
+    .tech-specs__table-wrap { margin-inline: -15px; border-radius: 0; }
+    .tech-specs__table { border-radius: 0; }
+
+    .tech-cta__title { font-size: 28px; }
+    .tech-cta__desc { font-size: 16px; }
+    .tech-cta__stats { gap: 20px; }
+    .tech-cta__stats span { font-size: 24px; }
+    .tech-cta__actions { flex-direction: column; align-items: center; }
+}
+
+/* --- max-width: 480px --- */
+@media (max-width: 480px) {
+    .tech-hero { padding-top: 64px; }
+    .tech-hero__title { font-size: 26px; }
+    .tech-hero__desc { font-size: 15px; }
+    .tech-hero__frame { padding: 24px 16px; border-radius: var(--radius-md); }
+    .tech-hero__frame-badge { font-size: 10px; padding: 4px 12px; }
+    .tech-hero__status-bar { gap: 10px; }
+    .tech-hero__status-bar span { font-size: 12px; }
+
+    .tech-core__card-body { padding: 22px 20px 26px; }
+    .tech-core__card-screen img { height: 200px; }
+
+    .tech-solar__blueprint-content { padding: 24px 18px; }
+    .tech-solar__specs { padding: 24px 18px; }
+
+    .tech-wind__milestone-img { height: 140px; }
+    .tech-wind__year { font-size: 26px; }
+
+    .tech-storage__card { height: 300px; }
+
+    .tech-grid__network { height: 260px; }
+    .tech-grid__node { width: 50px; height: 50px; }
+    .tech-grid__node i { font-size: 16px; }
+    .tech-grid__connection--1 { top: 50px; left: 75px; width: calc(100% - 75px - 75px); }
+    .tech-grid__connection--2 { top: 75px; left: 75px; width: 2px; height: 105px; }
+    .tech-grid__connection--3 { top: 75px; right: 75px; width: 2px; height: 105px; }
+    .tech-grid__connection--4 { bottom: 60px; left: 75px; width: calc(50% - 75px); }
+    .tech-grid__connection--5 { bottom: 60px; left: 50%; width: calc(50% - 75px); }
+
+    .tech-rd__card-body { padding: 24px 20px; }
+    .tech-rd__card-img { height: 180px; }
+
+    .tech-specs__table thead th,
+    .tech-specs__table tbody td { padding: 12px 16px; font-size: 13px; }
+
+    .tech-cta__title { font-size: 24px; }
+    .tech-cta__desc { font-size: 15px; }
+    .tech-cta__stats span { font-size: 20px; }
+    .tech-cta__stats small { font-size: 12px; }
+}
+
+/* --- max-width: 360px --- */
+@media (max-width: 360px) {
+    .tech-hero__title { font-size: 22px; }
+    .tech-hero__frame { padding: 20px 12px; }
+
+    .tech-core__card-body { padding: 18px 16px 22px; }
+    .tech-core__card-screen img { height: 180px; }
+
+    .tech-solar__blueprint-content { padding: 20px 14px; }
+    .tech-solar__specs { padding: 20px 14px; }
+    .tech-solar__spec-label { font-size: 13px; }
+    .tech-solar__spec-value { font-size: 14px; }
+
+    .tech-wind__milestone-img { height: 120px; }
+
+    .tech-storage__card { height: 280px; }
+    .tech-storage__card-front { padding: 20px; }
+    .tech-storage__card-back { padding: 22px 20px; }
+
+    .tech-grid__network { height: 220px; }
+
+    .tech-rd__card-body { padding: 20px 16px; }
+
+    .tech-specs__table thead th,
+    .tech-specs__table tbody td { padding: 10px 12px; font-size: 12px; }
+
+    .tech-cta__title { font-size: 22px; }
+    .tech-cta__stats { gap: 14px; }
+    .tech-cta__stats span { font-size: 18px; }
+}
+
+/* --- max-width: 360px specific --- */
+@media (max-width: 360px) {
+    .tech-grid__node { width: 40px; height: 40px; }
+    .tech-grid__node i { font-size: 14px; }
+    .tech-grid__connection--1 { top: 45px; left: 60px; width: calc(100% - 60px - 60px); }
+    .tech-grid__connection--2 { top: 65px; left: 60px; width: 2px; height: 80px; }
+    .tech-grid__connection--3 { top: 65px; right: 60px; width: 2px; height: 80px; }
+    .tech-grid__connection--4 { bottom: 50px; left: 60px; width: calc(50% - 60px); }
+    .tech-grid__connection--5 { bottom: 50px; left: 50%; width: calc(50% - 60px); }
+}

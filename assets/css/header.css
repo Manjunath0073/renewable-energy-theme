@@ -238,6 +238,11 @@
         right: 0;
     }
 
+    .nav__menu.show-menu ~ .nav__toggle {
+        opacity: 0;
+        pointer-events: none;
+    }
+
     .nav__header {
         display: flex;
         align-items: center;
@@ -312,4 +317,23 @@
     .nav__toggle.active span:nth-child(1) { top: 17px; }
     .nav__toggle.active span:nth-child(3) { top: 17px; }
     .nav__overlay.show { opacity: 1; visibility: visible; }
+}
+
+@media (max-width: 360px) {
+    .nav { min-height: 56px; }
+    .nav__menu { padding: 16px; }
+    .nav__header { margin-bottom: 24px; }
+    .nav__header .logo img { max-width: 100px; }
+    .nav__list { gap: 14px; }
+    .nav__link { font-size: 15px; }
+    .mobile__actions { gap: 8px; }
+    .mobile__actions .primary-btn,
+    .mobile__actions .login__btn { font-size: 13px; height: 40px; }
+    .nav__toggle { width: 32px; height: 32px; }
+    .nav__toggle span { width: 18px; }
+    .nav__toggle span:nth-child(1) { top: 9px; }
+    .nav__toggle span:nth-child(2) { top: 15px; }
+    .nav__toggle span:nth-child(3) { top: 21px; }
+    .nav__toggle.active span:nth-child(1) { top: 15px; }
+    .nav__toggle.active span:nth-child(3) { top: 15px; }
 }

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account — Stackly Renewable Energy</title>
+    <meta name="description" content="Create your Stackly account. Join the renewable energy revolution and access personalized dashboards, energy analytics, and sustainability tools.">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <!-- Form Panel -->
+        <div class="auth-form-wrap">
+            <div class="auth-form">
+                <div class="auth-form__header">
+                    <a href="index.html" class="auth-form__logo-mobile">
+                        <img src="assets/logo-stackly.webp" alt="Stackly Logo" width="200" height="44">
+                    </a>
+                    <p class="section-subtitle">Get Started</p>
+                    <h2>Create your account</h2>
+                    <p>Join the renewable energy revolution — it takes less than a minute.</p>
+                </div>
+
+                <form id="signupForm" novalidate autocomplete="off">
+                    <div class="auth-form__group">
+                        <label for="signupName">Full Name <span>*</span></label>
+                        <input type="text" name="name" id="signupName" placeholder="John Doe" autocomplete="name">
+                        <div class="auth-form__error" id="signupNameError">Please enter your name.</div>
+                    </div>
+
+                    <div class="auth-form__group">
+                        <label for="signupEmail">Email <span>*</span></label>
+                        <input type="email" name="email" id="signupEmail" placeholder="you@example.com" autocomplete="email">
+                        <div class="auth-form__error" id="signupEmailError">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="auth-form__role">
+                        <span class="auth-form__role-label">I want to join as <span class="text-accent">*</span></span>
+                        <div class="auth-form__role-options">
+                            <div class="auth-form__role-option">
+                                <input type="radio" name="role" id="signupRoleUser" value="user">
+                                <label for="signupRoleUser"><i class="fa-regular fa-user"></i> User</label>
+                            </div>
+                            <div class="auth-form__role-option">
+                                <input type="radio" name="role" id="signupRoleAdmin" value="admin">
+                                <label for="signupRoleAdmin"><i class="fa-regular fa-crown"></i> Admin</label>
+                            </div>
+                        </div>
+                        <div class="auth-form__role-error" id="signupRoleError">Please select a role.</div>
+                    </div>
+
+                    <div class="auth-form__group">
+                        <label for="signupPassword">Password <span>*</span></label>
+                        <div class="auth-form__input-wrap">
+                            <input type="password" name="password" id="signupPassword" placeholder="Create a strong password" autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly')">
+                            <button type="button" class="auth-form__toggle-pwd" id="signupTogglePwd" aria-label="Toggle password visibility">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="auth-form__error" id="signupPasswordError">Password must be at least 8 characters, include an uppercase letter and a number.</div>
+                        <div class="auth-form__password-reqs" id="passwordReqs">
+                            <span class="auth-form__password-req" id="reqLength"><i class="fa-regular fa-circle"></i> At least 8 characters</span>
+                            <span class="auth-form__password-req" id="reqUpper"><i class="fa-regular fa-circle"></i> One uppercase letter</span>
+                            <span class="auth-form__password-req" id="reqNumber"><i class="fa-regular fa-circle"></i> One number</span>
+                        </div>
+                    </div>
+
+                    <div class="auth-form__group">
+                        <label for="signupConfirm">Confirm Password <span>*</span></label>
+                        <div class="auth-form__input-wrap">
+                            <input type="password" name="confirm" id="signupConfirm" placeholder="Re-enter your password" autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly')">
+                            <button type="button" class="auth-form__toggle-pwd" id="signupToggleConfirm" aria-label="Toggle password visibility">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="auth-form__error" id="signupConfirmError">Passwords do not match.</div>
+                    </div>
+
+                    <div class="auth-form__row" style="margin-bottom:20px;">
+                        <label class="auth-form__checkbox">
+                            <input type="checkbox" id="signupTerms">
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <div class="auth-form__error" id="signupTermsError" style="margin-top:-12px;margin-bottom:16px;">You must agree to the terms.</div>
+
+                    <button type="submit" class="auth-form__submit primary-btn">
+                        <i class="fa-regular fa-user-plus"></i>
+                        Create Account
+                    </button>
+
+                    <p class="auth-form__footer">
+                        Already have an account? <a href="login.html">Sign in</a>
+                    </p>
+                </form>
+
+                <div class="auth-form__success" id="signupSuccess">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <div>
+                        <strong>Account created successfully!</strong>
+                        <span>You'll be redirected to the login page in a moment.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brand Panel -->
+        <div class="auth-brand">
+            <div class="auth-brand__bg">
+                <img src="https://source.unsplash.com/featured/?wind-farm-renewable-energy" alt="" loading="lazy">
+            </div>
+            <div class="auth-brand__overlay"></div>
+            <div class="auth-brand__pattern"></div>
+
+            <div class="auth-brand__decor auth-brand__decor--1"></div>
+            <div class="auth-brand__decor auth-brand__decor--2"></div>
+            <div class="auth-brand__decor auth-brand__decor--3"></div>
+
+            <div class="auth-brand__icon auth-brand__icon--sun"><i class="fa-regular fa-sun"></i></div>
+            <div class="auth-brand__icon auth-brand__icon--wind"><i class="fa-regular fa-wind"></i></div>
+            <div class="auth-brand__icon auth-brand__icon--leaf"><i class="fa-regular fa-leaf"></i></div>
+
+            <div class="auth-brand__content">
+                <a href="index.html" class="auth-brand__logo">
+                    <img src="assets/logo-stackly.webp" alt="Stackly Logo" width="200" height="44">
+                </a>
+                <h1 class="auth-brand__title">Powering a <span>sustainable tomorrow</span></h1>
+                <p class="auth-brand__desc">Join thousands of individuals and organizations already committed to reducing carbon emissions through clean, reliable renewable energy solutions that scale with your ambitions.</p>
+                <div class="auth-brand__stats">
+                    <div class="auth-brand__stat">
+                        <span>50K+</span>
+                        <small>Active Members</small>
+                    </div>
+                    <div class="auth-brand__stat">
+                        <span>4.9★</span>
+                        <small>User Rating</small>
+                    </div>
+                    <div class="auth-brand__stat">
+                        <span>127</span>
+                        <small>Countries Reached</small>
+                    </div>
+                </div>
+                <div class="auth-brand__testimonial" id="authTestimonial">
+                    <div class="auth-brand__testimonial-stars" id="authTestStars"></div>
+                    <div class="auth-brand__testimonial-body auth-fade-in" id="authTestBody">
+                        <p id="authTestText"></p>
+                        <div class="auth-brand__testimonial-author">
+                            <strong id="authTestName"></strong>
+                            <span id="authTestRole"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html" class="auth-brand__home">
+                    <i class="fa-regular fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        (function () {
+            /* ---- Testimonial Rotator ---- */
+            const testimonials = [
+                { stars: 5, text: "Stackly's platform transformed how we track and report our sustainability goals. The analytics alone saved us months of manual work.", name: "Elena Voss", role: "Chief Sustainability Officer, NovaGrid" },
+                { stars: 5, text: "The real-time monitoring and predictive analytics have helped us optimize our wind farm output by 23% within the first quarter.", name: "Marcus Rivera", role: "Director of Operations, WindForce Energy" },
+                { stars: 5, text: "Finally a platform that makes renewable energy management intuitive. Our team adopted it effortlessly and the results speak for themselves.", name: "Priya Sharma", role: "Head of Sustainability, GreenTech Industries" },
+                { stars: 4, text: "The carbon accounting features are incredibly precise. We were able to generate audit-ready reports in minutes instead of weeks.", name: "James Whitfield", role: "Environmental Compliance Lead, EcoFirst Corp" }
+            ];
+
+            const testContainer = document.getElementById('authTestimonial');
+            const testText = document.getElementById('authTestText');
+            const testName = document.getElementById('authTestName');
+            const testRole = document.getElementById('authTestRole');
+            const testStars = document.getElementById('authTestStars');
+            const testBody = document.getElementById('authTestBody');
+
+            let testIndex = 0;
+
+            function renderTestimonial(idx, fadeIn) {
+                if (fadeIn) {
+                    testBody.classList.remove('auth-fade-in');
+                    void testBody.offsetWidth;
+                }
+
+                const t = testimonials[idx];
+                testText.textContent = t.text;
+                testName.textContent = t.name;
+                testRole.textContent = t.role;
+                testStars.innerHTML = '';
+                const full = t.stars;
+                for (let i = 0; i < 5; i++) {
+                    const star = document.createElement('i');
+                    star.className = i < full ? 'fa-solid fa-star' : 'fa-regular fa-star';
+                    testStars.appendChild(star);
+                }
+
+                if (fadeIn) {
+                    testBody.classList.add('auth-fade-in');
+                }
+            }
+
+            renderTestimonial(0, false);
+
+            setInterval(function () {
+                testIndex = (testIndex + 1) % testimonials.length;
+                renderTestimonial(testIndex, true);
+            }, 3000);
+            /* ---- End Testimonial Rotator ---- */
+
+            const form = document.getElementById('signupForm');
+            const nameInput = document.getElementById('signupName');
+            const emailInput = document.getElementById('signupEmail');
+            const passwordInput = document.getElementById('signupPassword');
+            const confirmInput = document.getElementById('signupConfirm');
+            const roleInputs = document.querySelectorAll('input[name="role"]');
+            const termsInput = document.getElementById('signupTerms');
+
+            const nameError = document.getElementById('signupNameError');
+            const emailError = document.getElementById('signupEmailError');
+            const passwordError = document.getElementById('signupPasswordError');
+            const confirmError = document.getElementById('signupConfirmError');
+            const roleError = document.getElementById('signupRoleError');
+            const termsError = document.getElementById('signupTermsError');
+            const successMsg = document.getElementById('signupSuccess');
+
+            const reqLength = document.getElementById('reqLength');
+            const reqUpper = document.getElementById('reqUpper');
+            const reqNumber = document.getElementById('reqNumber');
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            function setField(input, errEl, state) {
+                if (state === true) {
+                    input.classList.remove('error');
+                    input.classList.add('valid');
+                    errEl.style.display = 'none';
+                } else if (state === false) {
+                    input.classList.add('error');
+                    input.classList.remove('valid');
+                    errEl.style.display = 'block';
+                } else {
+                    input.classList.remove('error', 'valid');
+                    errEl.style.display = 'none';
+                }
+            }
+
+            function getRole() {
+                for (const r of roleInputs) if (r.checked) return r.value;
+                return null;
+            }
+
+            function updateReqs(pwd) {
+                const len = pwd.length >= 8;
+                const upper = /[A-Z]/.test(pwd);
+                const num = /\d/.test(pwd);
+
+                reqLength.classList.toggle('met', len);
+                reqLength.querySelector('i').className = len ? 'fa-regular fa-circle-check' : 'fa-regular fa-circle';
+                reqUpper.classList.toggle('met', upper);
+                reqUpper.querySelector('i').className = upper ? 'fa-regular fa-circle-check' : 'fa-regular fa-circle';
+                reqNumber.classList.toggle('met', num);
+                reqNumber.querySelector('i').className = num ? 'fa-regular fa-circle-check' : 'fa-regular fa-circle';
+
+                return len && upper && num;
+            }
+
+            function matchPwd() { return passwordInput.value === confirmInput.value; }
+
+            function validate() {
+                let ok = true;
+
+                const name = nameInput.value.trim();
+                if (!name) { setField(nameInput, nameError, false); ok = false; }
+                else { setField(nameInput, nameError, true); }
+
+                const email = emailInput.value.trim();
+                if (!email || !emailRegex.test(email)) { setField(emailInput, emailError, false); ok = false; }
+                else { setField(emailInput, emailError, true); }
+
+                if (!getRole()) { roleError.style.display = 'block'; ok = false; }
+                else { roleError.style.display = 'none'; }
+
+                const pwd = passwordInput.value;
+                const pwdOk = updateReqs(pwd);
+                if (!pwd || !pwdOk) { setField(passwordInput, passwordError, false); ok = false; }
+                else { setField(passwordInput, passwordError, true); }
+
+                if (!confirmInput.value || !matchPwd()) { setField(confirmInput, confirmError, false); ok = false; }
+                else { setField(confirmInput, confirmError, true); }
+
+                if (!termsInput.checked) { termsError.style.display = 'block'; ok = false; }
+                else { termsError.style.display = 'none'; }
+
+                return ok;
+            }
+
+            passwordInput.addEventListener('input', function () {
+                const ok = updateReqs(this.value);
+                if (this.classList.contains('error') && ok && this.value) {
+                    setField(this, passwordError, true);
+                }
+                if (confirmInput.value) {
+                    setField(confirmInput, confirmError, matchPwd());
+                }
+            });
+
+            confirmInput.addEventListener('input', function () {
+                if (!this.value) { setField(this, confirmError, null); }
+                else { setField(this, confirmError, matchPwd()); }
+            });
+
+            nameInput.addEventListener('blur', function () {
+                const v = this.value.trim();
+                setField(this, nameError, v ? true : null);
+            });
+
+            emailInput.addEventListener('blur', function () {
+                const v = this.value.trim();
+                if (!v) { setField(this, emailError, null); }
+                else { setField(this, emailError, emailRegex.test(v)); }
+            });
+
+            roleInputs.forEach(r => r.addEventListener('change', () => { roleError.style.display = 'none'; }));
+            termsInput.addEventListener('change', function () { if (this.checked) termsError.style.display = 'none'; });
+
+            function setupPwdToggle(btnId, inputId) {
+                const btn = document.getElementById(btnId);
+                const inp = document.getElementById(inputId);
+                if (!btn || !inp) return;
+                btn.addEventListener('click', function () {
+                    const show = inp.getAttribute('type') === 'password';
+                    inp.setAttribute('type', show ? 'text' : 'password');
+                    this.querySelector('i').className = show ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+                });
+            }
+            setupPwdToggle('signupTogglePwd', 'signupPassword');
+            setupPwdToggle('signupToggleConfirm', 'signupConfirm');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!validate()) return;
+
+                successMsg.classList.add('show');
+                form.style.display = 'none';
+
+                setTimeout(function () {
+                    window.location.href = 'login.html';
+                }, 3500);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

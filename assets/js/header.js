@@ -5,10 +5,15 @@ const navOverlay = document.getElementById("nav-overlay");
 
 if (navToggle) {
     navToggle.addEventListener("click", () => {
-        navMenu.classList.add("show-menu");
-        navOverlay.classList.add("show");
-        navToggle.classList.add("active");
-        navToggle.setAttribute("aria-expanded", "true");
+        const isOpen = navMenu.classList.contains("show-menu");
+        if (isOpen) {
+            closeMenu();
+        } else {
+            navMenu.classList.add("show-menu");
+            navOverlay.classList.add("show");
+            navToggle.classList.add("active");
+            navToggle.setAttribute("aria-expanded", "true");
+        }
     });
 }
 
