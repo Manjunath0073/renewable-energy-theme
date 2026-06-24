@@ -259,16 +259,20 @@
             <!-- Section 5: Map Section -->
             <section class="contact-map section-padding" id="contact-map">
                 <div class="container">
-                    <div class="contact-map__header reveal">
+                    <div class="contact-map__header">
                         <span class="section-subtitle">Find Us</span>
                         <h2 class="section-title">Visit Our <span class="gradient-text">Head Office</span></h2>
                         <p class="section-desc">Located in the heart of Salem, Tamil Nadu — our team is ready to welcome you.</p>
                         <div class="section-divider"></div>
                     </div>
-                    <div class="contact-map__embed reveal reveal-delay-1">
-                        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=78.08%2C11.62%2C78.20%2C11.72&amp;layer=mapnik&amp;marker=11.6643%2C78.1460" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="contact-map__embed">
+                        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=78.08%2C11.62%2C78.20%2C11.72&amp;layer=mapnik&amp;marker=11.6643%2C78.1460" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="contact-map__overlay" id="mapOverlay">
+                            <i class="fa-solid fa-up-down-left-right"></i>
+                            <span>Click to interact with the map</span>
+                        </div>
                     </div>
-                    <div class="contact-map__address reveal reveal-delay-2">
+                    <div class="contact-map__address">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
                             <strong>Stackly — Salem Office</strong>
@@ -421,6 +425,12 @@
             successMsg.classList.add("show");
             setTimeout(() => successMsg.classList.remove("show"), 3500);
         });
+    </script>
+    <script>
+        const mapOverlay = document.getElementById("mapOverlay");
+        if (mapOverlay) {
+            mapOverlay.addEventListener("click", () => mapOverlay.classList.add("hidden"));
+        }
     </script>
     <script>
         function handleNewsletter(form) {

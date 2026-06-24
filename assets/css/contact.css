@@ -514,6 +514,7 @@ a.contact-hero__pill:hover i {
 }
 
 .contact-map__embed {
+    position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
@@ -524,6 +525,37 @@ a.contact-hero__pill:hover i {
     height: 420px;
     border: 0;
     display: block;
+}
+
+.contact-map__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(10,26,20,0.75);
+    color: var(--white);
+    cursor: pointer;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.contact-map__overlay i {
+    font-size: 28px;
+    color: var(--accent);
+}
+
+.contact-map__overlay span {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.contact-map__overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .contact-map__address {
