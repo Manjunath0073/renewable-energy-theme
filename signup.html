@@ -34,8 +34,8 @@
                 <form id="signupForm" novalidate autocomplete="off">
                     <div class="auth-form__group">
                         <label for="signupName">Full Name <span>*</span></label>
-                        <input type="text" name="name" id="signupName" placeholder="John Doe" autocomplete="name">
-                        <div class="auth-form__error" id="signupNameError">Please enter your name.</div>
+                        <input type="text" name="name" id="signupName" placeholder="John Doe" autocomplete="name" pattern="[A-Za-z\s]+" title="Only alphabets allowed">
+                        <div class="auth-form__error" id="signupNameError">Only alphabets allowed (no numbers or special characters).</div>
                     </div>
 
                     <div class="auth-form__group">
@@ -89,7 +89,7 @@
                     <div class="auth-form__row" style="margin-bottom:20px;">
                         <label class="auth-form__checkbox">
                             <input type="checkbox" id="signupTerms">
-                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                            I agree to the <a href="404.html">Terms of Service</a> and <a href="404.html">Privacy Policy</a>
                         </label>
                     </div>
                     <div class="auth-form__error" id="signupTermsError" style="margin-top:-12px;margin-bottom:16px;">You must agree to the terms.</div>
@@ -117,7 +117,7 @@
         <!-- Brand Panel -->
         <div class="auth-brand">
             <div class="auth-brand__bg">
-                <img src="https://picsum.photos/seed/wind-farm-renewable-energy/800/600" alt="" loading="lazy">
+                <img src="assets/images/picsum/wind-farm-renewable-energy-800x600.webp" alt="" loading="lazy">
             </div>
             <div class="auth-brand__overlay"></div>
             <div class="auth-brand__pattern"></div>
@@ -239,6 +239,7 @@
             const reqNumber = document.getElementById('reqNumber');
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const nameRegex = /^[A-Za-z\s]+$/;
 
             function setField(input, errEl, state) {
                 if (state === true) {
@@ -281,7 +282,7 @@
                 let ok = true;
 
                 const name = nameInput.value.trim();
-                if (!name) { setField(nameInput, nameError, false); ok = false; }
+                if (!name || !nameRegex.test(name)) { setField(nameInput, nameError, false); ok = false; }
                 else { setField(nameInput, nameError, true); }
 
                 const email = emailInput.value.trim();
@@ -322,7 +323,8 @@
 
             nameInput.addEventListener('blur', function () {
                 const v = this.value.trim();
-                setField(this, nameError, v ? true : null);
+                if (!v) { setField(this, nameError, null); }
+                else { setField(this, nameError, nameRegex.test(v)); }
             });
 
             emailInput.addEventListener('blur', function () {

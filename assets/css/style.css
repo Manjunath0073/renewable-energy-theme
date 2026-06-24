@@ -967,7 +967,7 @@ section {
 
 .projects__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 30px;
 }
 
@@ -1023,10 +1023,7 @@ section {
     opacity: 0.8;
 }
 
-.project__card:nth-child(1) { grid-column: 1 / 2; }
-.project__card:nth-child(2) { grid-column: 2 / 3; }
-.project__card:nth-child(3) { grid-column: 1 / 2; }
-.project__card:nth-child(4) { grid-column: 2 / 3; }
+
 
 .project__img {
     width: 100%;
@@ -1045,7 +1042,7 @@ section {
 
 .features__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
 }
 
@@ -2300,9 +2297,13 @@ section {
     .about__image-frame--alt .about__img { height: 200px; }
     .about__media { min-height: auto; }
     .services__grid { grid-template-columns: 1fr 1fr; }
-    .projects__grid { grid-template-columns: 1fr; }
     .project__img { height: 280px; }
-    .features__grid { grid-template-columns: 1fr 1fr; }
+    .features__grid { gap: 20px; }
+    .features__item { min-height: 280px; }
+    .features__item-content { min-height: 280px; padding: 32px 20px; }
+    .features__item-icon { width: 56px; height: 56px; font-size: 22px; }
+    .features__item-content h4 { font-size: 18px; }
+    .features__item-content p { font-size: 14px; }
     .partners__grid { gap: 30px; }
     .partners__grid .partners__item { width: 150px; }
 
@@ -2345,7 +2346,7 @@ section {
     .hero__actions .primary-btn,
     .hero__actions .secondary-btn { min-width: 0; padding: 14px 24px; font-size: 14px; }
     .services__grid { grid-template-columns: 1fr; }
-    .features__grid { grid-template-columns: 1fr; }
+    .features__grid { gap: 20px; }
     .stats__grid { grid-template-columns: 1fr 1fr; }
     .partners__grid .partners__item { width: 140px; }
     .about__features { grid-template-columns: 1fr; }
@@ -2695,10 +2696,20 @@ section {
     .service__card-body h3 { font-size: 14px; }
     .service__card-body p { font-size: 12px; }
     .service__card .service__icon { width: 30px; height: 30px; font-size: 12px; bottom: 8px; left: 12px; border-radius: 8px; }
+    .features__grid { gap: 8px; }
     .features__item { min-height: 150px; }
     .features__item-content { min-height: 150px; padding: 16px 12px; }
     .features__item-icon { width: 36px; height: 36px; font-size: 14px; margin-bottom: 8px; }
     .features__item-content h4 { font-size: 13px; }
     .features__item-content p { font-size: 11px; }
     .testimonial__avatar { width: 32px; height: 32px; border-width: 1.5px; }
+
+    .projects__header { margin-bottom: 16px; gap: 8px; }
+    .projects__grid { gap: 8px; }
+    .project__card img,
+    .project__img { height: 120px; }
+    .project__info { padding: 8px 10px; }
+    .project__info span { font-size: 8px; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .project__info h3 { font-size: 12px; margin-bottom: 2px; }
+    .project__info p { font-size: 10px; }
 }

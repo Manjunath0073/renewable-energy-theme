@@ -82,7 +82,7 @@
             <!-- Section 1: Contact Hero — Reach Out -->
             <section class="contact-hero" id="contact-hero">
                 <div class="contact-hero__bg">
-                    <img src="https://picsum.photos/seed/contact/1920/1080" alt="Contact Us">
+                    <img src="assets/images/picsum/contact-1920x1080.webp" alt="Contact Us">
                 </div>
                 <div class="contact-hero__overlay"></div>
                 <div class="contact-hero__pattern"></div>
@@ -172,8 +172,8 @@
                                 <div class="contact-form__row">
                                     <div class="contact-form__group">
                                         <label for="form-name">Full Name <span>*</span></label>
-                                        <input type="text" id="form-name" name="name" placeholder="John Doe" required>
-                                        <span class="contact-form__error" id="name-error">Please enter your name.</span>
+                                        <input type="text" id="form-name" name="name" placeholder="John Doe" required pattern="[A-Za-z\s]+" title="Only alphabets allowed">
+                                        <span class="contact-form__error" id="name-error">Only alphabets allowed (no numbers or special characters).</span>
                                     </div>
                                     <div class="contact-form__group">
                                         <label for="form-email">Email Address <span>*</span></label>
@@ -221,7 +221,7 @@
                     <div class="contact-locations__grid">
                         <div class="contact-locations__card reveal reveal-delay-1">
                             <div class="contact-locations__card-image">
-                                <img src="https://picsum.photos/seed/salem/600/400" alt="Salem">
+                                <img src="assets/images/picsum/salem-600x400.webp" alt="Salem">
                             </div>
                             <div class="contact-locations__card-body">
                                 <h3>Salem (Head Office)</h3>
@@ -232,7 +232,7 @@
                         </div>
                         <div class="contact-locations__card reveal reveal-delay-2">
                             <div class="contact-locations__card-image">
-                                <img src="https://picsum.photos/seed/london/600/400" alt="London">
+                                <img src="assets/images/picsum/london-600x400.webp" alt="London">
                             </div>
                             <div class="contact-locations__card-body">
                                 <h3>London</h3>
@@ -243,7 +243,7 @@
                         </div>
                         <div class="contact-locations__card reveal reveal-delay-3">
                             <div class="contact-locations__card-image">
-                                <img src="https://picsum.photos/seed/singapore/600/400" alt="Singapore">
+                                <img src="assets/images/picsum/singapore-600x400.webp" alt="Singapore">
                             </div>
                             <div class="contact-locations__card-body">
                                 <h3>Singapore</h3>
@@ -342,8 +342,8 @@
                 <div class="footer__bottom">
                     <span>&copy; 2026 Stackly. All rights reserved.</span>
                     <div>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <a href="404.html">Privacy Policy</a>
+                        <a href="404.html">Terms of Service</a>
                     </div>
                 </div>
             </div>
@@ -373,13 +373,17 @@
             const errorEl = document.getElementById(errorId);
             let valid = true;
 
+            const v = input.value.trim();
             if (input === emailInput) {
                 const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                valid = input.value.trim() !== "" && re.test(input.value.trim());
+                valid = v !== "" && re.test(v);
             } else if (input === messageInput) {
-                valid = input.value.trim().length >= 10;
+                valid = v.length >= 10;
+            } else if (input === nameInput) {
+                const nameRe = /^[A-Za-z\s]+$/;
+                valid = v !== "" && nameRe.test(v);
             } else {
-                valid = input.value.trim() !== "";
+                valid = v !== "";
             }
 
             input.classList.toggle("error", !valid);

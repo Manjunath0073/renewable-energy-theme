@@ -7,6 +7,7 @@
     min-height: 100vh;
     background: var(--cream);
     font-family: var(--body-font);
+    overflow-x: hidden;
 }
 
 /* --- Sidebar --- */
@@ -321,6 +322,7 @@
 .dash-content {
     flex: 1;
     padding: 30px;
+    max-width: 100%;
 }
 
 .dash-content__section {
@@ -533,7 +535,8 @@
     background: var(--white);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .dash-table-card__header {
@@ -561,6 +564,12 @@
 .dash-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.dash-table th,
+.dash-table td {
+    word-break: break-word;
 }
 
 .dash-table th {
@@ -1051,6 +1060,9 @@
 
     .dash-sidebar__close {
         display: flex;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
     }
 
     .dash-main {
@@ -1059,12 +1071,16 @@
 
     .dash-topbar__toggle {
         display: flex;
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
     }
 
     .dash-topbar__search {
         display: none;
     }
 
+    .dash-topbar__title { font-size: 18px; }
     .dash-content { padding: 24px; }
     .dash-stats { gap: 16px; }
     .dash-welcome { padding: 24px; }
@@ -1219,12 +1235,10 @@
     .dash-topbar__avatar { width: 26px; height: 26px; }
     .dash-topbar__right { gap: 8px; }
 
-    .dash-table-card { overflow: hidden; }
     .dash-table-card__header { padding: 10px; flex-direction: column; gap: 6px; align-items: flex-start; }
     .dash-table-card__header h3 { font-size: 13px; }
     .dash-table-card__header a { font-size: 11px; }
-    .dash-table { table-layout: fixed; width: 100%; }
-    .dash-table th, .dash-table td { padding: 3px 4px; font-size: 8px; word-break: break-word; }
+    .dash-table th, .dash-table td { padding: 3px 4px; font-size: 8px; }
     .dash-table__status { font-size: 8px; padding: 1px 4px; gap: 2px; }
     .dash-table__user { flex-direction: column; align-items: flex-start; gap: 2px; }
     .dash-table__user img { width: 18px; height: 18px; }
