@@ -1170,22 +1170,110 @@
 }
 
 @media (max-width: 320px) {
+    .dash-sidebar__header { padding: 12px 10px; }
+    .dash-sidebar__logo img { max-width: 90px; }
+    .dash-sidebar__nav { padding: 6px 4px; }
+    .dash-sidebar__item { padding: 7px 8px; font-size: 11px; gap: 8px; }
+    .dash-sidebar__item i { font-size: 12px; width: 16px; }
+    .dash-sidebar__label { font-size: 9px; padding: 12px 10px 6px; }
+    .dash-sidebar__footer { padding: 8px 4px; }
+    .dash-sidebar__logout { padding: 7px 8px; font-size: 11px; gap: 8px; }
+    .dash-sidebar__logout i { font-size: 12px; width: 16px; }
+    .dash-sidebar__close { width: 24px; height: 24px; font-size: 14px; }
+
     .dash-stats { grid-template-columns: 1fr; gap: 8px; }
     .dash-content { padding: 10px 6px; }
-    .dash-content__header h2 { font-size: 16px; }
+    .dash-content__header { margin-bottom: 16px; }
+    .dash-content__header h2 { font-size: 15px; }
+    .dash-content__header p { font-size: 11px; }
+
     .dash-stat { padding: 10px; }
-    .dash-stat__value { font-size: 16px; }
-    .dash-chart-card { padding: 10px; }
-    .dash-chart-card__body { height: 160px; }
-    .dash-grid-2 { gap: 10px; }
-    .dash-grid-3 { gap: 10px; }
-    .dash-table th, .dash-table td { padding: 5px 6px; font-size: 10px; }
-    .dash-topbar { padding: 8px 8px; }
-    .dash-topbar__title { font-size: 13px; }
-    .dash-topbar__toggle { width: 28px; height: 28px; font-size: 12px; }
-    .dash-topbar__notif { width: 30px; height: 30px; font-size: 12px; }
-    .dash-topbar__avatar { width: 30px; height: 30px; }
-    .dash-welcome__content h2 { font-size: 15px; }
+    .dash-stat__icon { width: 30px; height: 30px; font-size: 12px; border-radius: 8px; }
+    .dash-stat__value { font-size: 15px; }
+    .dash-stat__label { font-size: 10px; }
+    .dash-stat__trend { font-size: 9px; padding: 1px 5px; }
+    .dash-stat__top { margin-bottom: 8px; }
+
+    .dash-chart-card { padding: 8px; border-radius: 12px; }
+    .dash-chart-card__header { flex-direction: column; gap: 6px; align-items: flex-start; }
+    .dash-chart-card__header h3 { font-size: 13px; }
+    .dash-chart-card__header span { font-size: 10px; }
+    .dash-chart-card__body { height: 150px; }
+    .dash-chart-card__period { flex-wrap: wrap; gap: 4px; }
+    .dash-chart-card__period button { padding: 2px 7px; font-size: 9px; }
+
+    .dash-grid-2 { grid-template-columns: 1fr; gap: 10px; }
+    .dash-grid-3 { grid-template-columns: 1fr; gap: 10px; }
+    .dash-grid-full { margin-bottom: 16px; }
+
+    .dash-welcome { padding: 14px; border-radius: 12px; gap: 10px; text-align: center; flex-direction: column; }
+    .dash-welcome__content h2 { font-size: 14px; }
     .dash-welcome__content p { font-size: 11px; }
-    .dash-chart-card__header { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .dash-welcome__content .primary-btn { width: 100%; justify-content: center; font-size: 12px; padding: 10px 16px; height: auto; min-width: 0; }
+
+    .dash-topbar { padding: 6px 8px; gap: 8px; }
+    .dash-topbar__title { font-size: 12px; }
+    .dash-topbar__toggle { width: 26px; height: 26px; font-size: 11px; }
+    .dash-topbar__notif { width: 26px; height: 26px; font-size: 11px; }
+    .dash-topbar__notif-dot { top: 5px; right: 5px; width: 5px; height: 5px; border-width: 1px; }
+    .dash-topbar__avatar { width: 26px; height: 26px; }
+    .dash-topbar__right { gap: 8px; }
+
+    .dash-table-card { overflow: hidden; }
+    .dash-table-card__header { padding: 10px; flex-direction: column; gap: 6px; align-items: flex-start; }
+    .dash-table-card__header h3 { font-size: 13px; }
+    .dash-table-card__header a { font-size: 11px; }
+    .dash-table { table-layout: fixed; width: 100%; }
+    .dash-table th, .dash-table td { padding: 3px 4px; font-size: 8px; word-break: break-word; }
+    .dash-table__status { font-size: 8px; padding: 1px 4px; gap: 2px; }
+    .dash-table__user { flex-direction: column; align-items: flex-start; gap: 2px; }
+    .dash-table__user img { width: 18px; height: 18px; }
+    .dash-table__user strong { font-size: 8px; }
+    .dash-table__user span { font-size: 7px; }
+
+    .dash-profile { padding: 14px; }
+    .dash-profile__header { flex-direction: column; text-align: center; gap: 10px; padding-bottom: 14px; margin-bottom: 16px; }
+    .dash-profile__avatar { width: 50px; height: 50px; border-width: 2px; }
+    .dash-profile__info h3 { font-size: 15px; }
+    .dash-profile__info span { font-size: 11px; }
+    .dash-profile__info p { font-size: 10px; }
+    .dash-profile__form { grid-template-columns: 1fr; gap: 12px; }
+    .dash-profile__group label { font-size: 11px; }
+    .dash-profile__group input, .dash-profile__group select { padding: 8px 10px; font-size: 12px; }
+    .dash-profile__actions { flex-direction: column; gap: 8px; }
+    .dash-profile__actions .primary-btn { width: 100%; justify-content: center; font-size: 12px; padding: 10px 16px; height: auto; min-width: 0; }
+
+    .dash-settings__card { padding: 14px; }
+    .dash-settings__card h3 { font-size: 14px; }
+    .dash-settings__card > p { font-size: 11px; margin-bottom: 12px; }
+    .dash-settings__row { padding: 10px 0; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .dash-settings__row-left strong { font-size: 12px; }
+    .dash-settings__row-left span { font-size: 10px; }
+    .dash-settings__row select { width: 100%; }
+    .dash-settings__row .dash-toggle { align-self: flex-start; }
+    .dash-settings__row button { width: 100%; }
+
+    .dash-users-header { flex-direction: column; align-items: stretch; gap: 8px; }
+    .dash-users-header .dash-topbar__search { width: 100%; }
+    .dash-users-header > div { flex-direction: column; }
+    .dash-users-header select { width: 100%; font-size: 12px; padding: 8px 12px; }
+    .dash-users-header .primary-btn { width: 100%; justify-content: center; font-size: 12px; padding: 8px 16px; height: auto; min-width: 0; }
+
+    .dash-reports { grid-template-columns: 1fr; gap: 10px; }
+    .dash-report-card { padding: 14px; gap: 10px; }
+    .dash-report-card__icon { width: 36px; height: 36px; font-size: 14px; border-radius: 10px; }
+    .dash-report-card__info h4 { font-size: 12px; }
+    .dash-report-card__info p { font-size: 10px; }
+    .dash-report-card__info small { font-size: 9px; }
+
+    .dash-activity__item { padding: 10px 0; gap: 10px; }
+    .dash-activity__text { font-size: 11px; }
+    .dash-activity__time { font-size: 9px; }
+    .dash-activity__dot { width: 7px; height: 7px; margin-top: 4px; }
+
+    .dash-source-item { gap: 8px; }
+    .dash-source-item__icon { width: 28px; height: 28px; font-size: 11px; border-radius: 8px; }
+    .dash-source-item__info strong { font-size: 11px; margin-bottom: 4px; }
+    .dash-source-item__bar { height: 4px; }
+    .dash-source-item__value { font-size: 11px; }
 }
