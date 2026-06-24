@@ -218,7 +218,22 @@
                 if (!validate()) return;
 
                 loginError.classList.remove('show');
-                window.location.href = 'index.html';
+
+                const role = getRole();
+                const email = emailInput.value.trim();
+                const name = email.split('@')[0].replace(/[._]/g, ' ');
+                const nameParts = name.split(' ');
+                const displayName = nameParts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
+
+                sessionStorage.setItem('stackly_user', JSON.stringify({
+                    name: displayName,
+                    email: email,
+                    role: role,
+                    plan: role === 'admin' ? 'Enterprise' : 'Premium',
+                    memberSince: 'January 2024'
+                }));
+
+                window.location.href = role === 'admin' ? 'dashboard-admin.html' : 'dashboard-user.html';
             });
         })();
     </script>

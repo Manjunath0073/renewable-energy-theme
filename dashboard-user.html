@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Stackly User</title>
+    <meta name="description" content="Your personal energy dashboard. Monitor production, consumption, and savings.">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="dash-sidebar" id="dashSidebar">
+            <div class="dash-sidebar__header">
+                <a href="index.html" class="dash-sidebar__logo">
+                    <img src="assets/logo-stackly.webp" alt="Stackly">
+                </a>
+                <button class="dash-sidebar__close" id="dashSidebarClose" aria-label="Close sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="dash-sidebar__nav">
+                <div class="dash-sidebar__label">Main Menu</div>
+
+                <a href="#" class="dash-sidebar__item active" data-section="overview">
+                    <i class="fa-solid fa-chart-pie"></i> Overview
+                </a>
+                <a href="#" class="dash-sidebar__item" data-section="production">
+                    <i class="fa-solid fa-solar-panel"></i> Production
+                </a>
+                <a href="#" class="dash-sidebar__item" data-section="consumption">
+                    <i class="fa-solid fa-bolt"></i> Consumption
+                </a>
+                <a href="#" class="dash-sidebar__item" data-section="savings">
+                    <i class="fa-solid fa-leaf"></i> Savings & Impact
+                </a>
+                <a href="#" class="dash-sidebar__item" data-section="profile">
+                    <i class="fa-solid fa-user"></i> Profile
+                </a>
+            </nav>
+
+            <div class="dash-sidebar__footer">
+                <a href="#" class="dash-sidebar__logout" id="dashLogout">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Overlay -->
+        <div class="dash-overlay" id="dashOverlay"></div>
+
+        <!-- Main -->
+        <main class="dash-main">
+
+            <!-- Topbar -->
+            <header class="dash-topbar">
+                <div class="dash-topbar__left">
+                    <button class="dash-topbar__toggle" id="dashToggle" aria-label="Toggle sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h1 class="dash-topbar__title">Dashboard</h1>
+                </div>
+                <div class="dash-topbar__right">
+                    <div class="dash-topbar__search">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="dash-topbar__notif">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="dash-topbar__notif-dot"></span>
+                    </div>
+                    <img src="" alt="Avatar" class="dash-topbar__avatar" id="userAvatarTop">
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="dash-content">
+
+                <!-- ===== OVERVIEW ===== -->
+                <section class="dash-content__section active" id="section-overview">
+                    <div class="dash-content__header">
+                        <h2>Overview</h2>
+                        <p>Your energy dashboard at a glance.</p>
+                    </div>
+
+                    <div class="dash-welcome">
+                        <div class="dash-welcome__content">
+                            <h2>Welcome back, <span id="userNameWelcome">John</span>! &#127758;</h2>
+                            <p>Your solar panels generated 12% more energy this week. Keep up the great work!</p>
+                            <a href="404.html" class="primary-btn">View Production <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="dash-welcome__icon">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+                    </div>
+
+                    <div class="dash-stats">
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--gold"><i class="fa-solid fa-bolt"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 12%</span>
+                            </div>
+                            <div class="dash-stat__value">4.8 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">kWh</small></div>
+                            <div class="dash-stat__label">Today's Production</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--green"><i class="fa-solid fa-home"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--down">&#8595; 3%</span>
+                            </div>
+                            <div class="dash-stat__value">3.2 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">kWh</small></div>
+                            <div class="dash-stat__label">Today's Consumption</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--blue"><i class="fa-solid fa-coins"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 8%</span>
+                            </div>
+                            <div class="dash-stat__value">$186.40</div>
+                            <div class="dash-stat__label">Savings This Month</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--purple"><i class="fa-solid fa-tree"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 15%</span>
+                            </div>
+                            <div class="dash-stat__value">2.4 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">tons</small></div>
+                            <div class="dash-stat__label">CO&#8322; Saved</div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-2">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Energy Production</h3>
+                                    <span>Last 7 days</span>
+                                </div>
+                                <div class="dash-chart-card__period">
+                                    <button class="active">7D</button>
+                                    <button>30D</button>
+                                    <button>1Y</button>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="prodChartOverview"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Energy Savings</h3>
+                                    <span>Monthly breakdown</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="savingsChartOverview"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-2">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Energy Source</h3>
+                                    <span>Production breakdown</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="sourceChartOverview"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Recent Activity</h3>
+                                    <span>Live updates</span>
+                                </div>
+                            </div>
+                            <div class="dash-activity">
+                                <div class="dash-activity__item">
+                                    <span class="dash-activity__dot dash-activity__dot--gold"></span>
+                                    <div class="dash-activity__text"><strong>Solar peak</strong> — Reached 4.2 kW at 1:30 PM</div>
+                                    <span class="dash-activity__time">2 min ago</span>
+                                </div>
+                                <div class="dash-activity__item">
+                                    <span class="dash-activity__dot dash-activity__dot--green"></span>
+                                    <div class="dash-activity__text"><strong>Grid export</strong> — Exported 1.8 kWh to grid</div>
+                                    <span class="dash-activity__time">18 min ago</span>
+                                </div>
+                                <div class="dash-activity__item">
+                                    <span class="dash-activity__dot dash-activity__dot--blue"></span>
+                                    <div class="dash-activity__text"><strong>Consumption spike</strong> — AC unit drew 1.2 kW</div>
+                                    <span class="dash-activity__time">45 min ago</span>
+                                </div>
+                                <div class="dash-activity__item">
+                                    <span class="dash-activity__dot dash-activity__dot--red"></span>
+                                    <div class="dash-activity__text"><strong>System check</strong> — All panels operating normally</div>
+                                    <span class="dash-activity__time">1 hr ago</span>
+                                </div>
+                                <div class="dash-activity__item">
+                                    <span class="dash-activity__dot dash-activity__dot--gold"></span>
+                                    <div class="dash-activity__text"><strong>Daily target</strong> — 92% of daily production goal met</div>
+                                    <span class="dash-activity__time">2 hr ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== PRODUCTION ===== -->
+                <section class="dash-content__section" id="section-production">
+                    <div class="dash-content__header">
+                        <h2>Energy Production</h2>
+                        <p>Monitor your solar and wind energy generation in real time.</p>
+                    </div>
+
+                    <div class="dash-stats">
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--gold"><i class="fa-solid fa-sun"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 18%</span>
+                            </div>
+                            <div class="dash-stat__value">142.6 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">kWh</small></div>
+                            <div class="dash-stat__label">This Week</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--green"><i class="fa-solid fa-wind"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 6%</span>
+                            </div>
+                            <div class="dash-stat__value">38.2 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">kWh</small></div>
+                            <div class="dash-stat__label">Wind Generation</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--blue"><i class="fa-solid fa-battery-full"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 4%</span>
+                            </div>
+                            <div class="dash-stat__value">89%</div>
+                            <div class="dash-stat__label">Battery Storage</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--purple"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 22%</span>
+                            </div>
+                            <div class="dash-stat__value">98.6<small style="font-size:14px;color:var(--gray-500);font-weight:400;">%</small></div>
+                            <div class="dash-stat__label">System Efficiency</div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-full">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Production Over Time</h3>
+                                    <span>Hourly generation (kWh)</span>
+                                </div>
+                                <div class="dash-chart-card__period">
+                                    <button class="active">Today</button>
+                                    <button>Week</button>
+                                    <button>Month</button>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="prodChartDetail"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-2">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Source Breakdown</h3>
+                                    <span>Energy by source type</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="prodSourceChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Daily Comparison</h3>
+                                    <span>This week vs last week</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="prodCompareChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== CONSUMPTION ===== -->
+                <section class="dash-content__section" id="section-consumption">
+                    <div class="dash-content__header">
+                        <h2>Energy Consumption</h2>
+                        <p>Track your household energy usage patterns.</p>
+                    </div>
+
+                    <div class="dash-stats">
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--blue"><i class="fa-solid fa-bolt"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--down">&#8595; 5%</span>
+                            </div>
+                            <div class="dash-stat__value">22.4 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">kWh</small></div>
+                            <div class="dash-stat__label">Today's Usage</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--gold"><i class="fa-solid fa-clock"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 2%</span>
+                            </div>
+                            <div class="dash-stat__value">2:30 PM</div>
+                            <div class="dash-stat__label">Peak Hour Today</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--green"><i class="fa-solid fa-temperature-low"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--down">&#8595; 8%</span>
+                            </div>
+                            <div class="dash-stat__value">32%</div>
+                            <div class="dash-stat__label">HVAC Usage</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--purple"><i class="fa-solid fa-lightbulb"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--down">&#8595; 12%</span>
+                            </div>
+                            <div class="dash-stat__value">18%</div>
+                            <div class="dash-stat__label">Lighting Share</div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-full">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Consumption Trend</h3>
+                                    <span>Daily energy usage (kWh)</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="consumptionTrendChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-2">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Peak Hours Analysis</h3>
+                                    <span>Average hourly consumption</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="peakHoursChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Appliance Breakdown</h3>
+                                    <span>Usage by category</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="applianceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== SAVINGS & IMPACT ===== -->
+                <section class="dash-content__section" id="section-savings">
+                    <div class="dash-content__header">
+                        <h2>Savings & Impact</h2>
+                        <p>See how your renewable energy system benefits your wallet and the planet.</p>
+                    </div>
+
+                    <div class="dash-stats">
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--gold"><i class="fa-solid fa-dollar-sign"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 8%</span>
+                            </div>
+                            <div class="dash-stat__value">$186.40</div>
+                            <div class="dash-stat__label">Saved This Month</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--green"><i class="fa-solid fa-tree"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 15%</span>
+                            </div>
+                            <div class="dash-stat__value">2.4 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">tons</small></div>
+                            <div class="dash-stat__label">CO&#8322; Saved</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--blue"><i class="fa-solid fa-car"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 15%</span>
+                            </div>
+                            <div class="dash-stat__value">5,280</div>
+                            <div class="dash-stat__label">Miles Not Driven</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--purple"><i class="fa-solid fa-seedling"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 15%</span>
+                            </div>
+                            <div class="dash-stat__value">39</div>
+                            <div class="dash-stat__label">Trees Equivalent</div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-2">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Monthly Savings</h3>
+                                    <span>Cost avoided by using solar</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="monthlySavingsChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Environmental Impact</h3>
+                                    <span>CO&#8322; reduction over time</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="impactChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-3">
+                        <div class="dash-chart-card" style="text-align:center;">
+                            <div style="font-size:42px;color:var(--accent);margin-bottom:12px;">
+                                <i class="fa-solid fa-tree"></i>
+                            </div>
+                            <h3 style="font-size:28px;margin-bottom:4px;">39</h3>
+                            <p style="color:var(--gray-500);font-size:14px;">Trees worth of CO&#8322; absorbed this year</p>
+                        </div>
+                        <div class="dash-chart-card" style="text-align:center;">
+                            <div style="font-size:42px;color:#22c55e;margin-bottom:12px;">
+                                <i class="fa-solid fa-droplet"></i>
+                            </div>
+                            <h3 style="font-size:28px;margin-bottom:4px;">12,500</h3>
+                            <p style="color:var(--gray-500);font-size:14px;">Gallons of water saved</p>
+                        </div>
+                        <div class="dash-chart-card" style="text-align:center;">
+                            <div style="font-size:42px;color:#3b82f6;margin-bottom:12px;">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <h3 style="font-size:28px;margin-bottom:4px;">Net Zero</h3>
+                            <p style="color:var(--gray-500);font-size:14px;">Your carbon footprint is fully offset</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== PROFILE ===== -->
+                <section class="dash-content__section" id="section-profile">
+                    <div class="dash-content__header">
+                        <h2>Profile</h2>
+                        <p>Manage your account settings and preferences.</p>
+                    </div>
+
+                    <div class="dash-profile">
+                        <div class="dash-profile__header">
+                            <img src="" alt="Avatar" class="dash-profile__avatar" id="userAvatarProfile">
+                            <div class="dash-profile__info">
+                                <h3 id="userNameProfile">John Doe</h3>
+                                <span id="userEmailProfile">john.doe@example.com</span>
+                                <p>Member since <span id="userMemberSince">January 2024</span> &#8226; <span id="userPlanProfile">Premium</span> Plan</p>
+                            </div>
+                        </div>
+
+                        <form class="dash-profile__form" onsubmit="alert('Profile updated successfully!'); return false;">
+                            <div class="dash-profile__group">
+                                <label for="profName">Full Name</label>
+                                <input type="text" id="profName" value="">
+                            </div>
+                            <div class="dash-profile__group">
+                                <label for="profEmail">Email Address</label>
+                                <input type="email" id="profEmail" value="">
+                            </div>
+                            <div class="dash-profile__group">
+                                <label for="profPhone">Phone</label>
+                                <input type="text" id="profPhone" value="+1 (555) 123-4567">
+                            </div>
+                            <div class="dash-profile__group">
+                                <label for="profTimezone">Timezone</label>
+                                <select id="profTimezone">
+                                    <option>America/New_York</option>
+                                    <option>America/Chicago</option>
+                                    <option selected>America/Denver</option>
+                                    <option>America/Los_Angeles</option>
+                                </select>
+                            </div>
+                            <div class="dash-profile__group">
+                                <label for="profAddress">Address</label>
+                                <input type="text" id="profAddress" value="123 Solar Street, Denver, CO">
+                            </div>
+                            <div class="dash-profile__group">
+                                <label for="profPlan">Subscription Plan</label>
+                                <select id="profPlan">
+                                    <option selected>Premium - $29.99/mo</option>
+                                    <option>Basic - $14.99/mo</option>
+                                    <option>Enterprise - $99.99/mo</option>
+                                </select>
+                            </div>
+                            <div class="dash-profile__actions">
+                                <button type="button" class="primary-btn" onclick="location.href='404.html'"><i class="fa-regular fa-floppy-disk"></i> Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script>
+        // ---- User Data from Session ----
+        const userData = (function() {
+            try {
+                const d = JSON.parse(sessionStorage.getItem('stackly_user'));
+                if (d && d.name) return d;
+            } catch(_) {}
+            return null;
+        })();
+
+        if (!userData) {
+            window.location.href = 'login.html';
+        }
+
+        function updateAvatar(img, name) {
+            img.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=D4A373&color=1B4D3E&size=144';
+        }
+
+        document.querySelectorAll('.dash-topbar__avatar').forEach(function(img) {
+            updateAvatar(img, userData.name);
+        });
+        document.getElementById('userAvatarProfile') && updateAvatar(document.getElementById('userAvatarProfile'), userData.name);
+        document.getElementById('userNameWelcome') && (document.getElementById('userNameWelcome').textContent = userData.name.split(' ')[0]);
+        document.getElementById('userNameProfile') && (document.getElementById('userNameProfile').textContent = userData.name);
+        document.getElementById('userEmailProfile') && (document.getElementById('userEmailProfile').textContent = userData.email);
+        document.getElementById('userMemberSince') && (document.getElementById('userMemberSince').textContent = userData.memberSince || 'January 2024');
+        document.getElementById('userPlanProfile') && (document.getElementById('userPlanProfile').textContent = userData.plan || 'Premium');
+        document.getElementById('profName') && (document.getElementById('profName').value = userData.name);
+        document.getElementById('profEmail') && (document.getElementById('profEmail').value = userData.email);
+
+        // ---- Logout ----
+        document.getElementById('dashLogout').addEventListener('click', function(e) {
+            e.preventDefault();
+            sessionStorage.removeItem('stackly_user');
+            window.location.href = 'index.html';
+        });
+
+        // ---- Sidebar Toggle ----
+        const sidebar = document.getElementById('dashSidebar');
+        const overlay = document.getElementById('dashOverlay');
+        const toggleBtn = document.getElementById('dashToggle');
+        const closeBtn = document.getElementById('dashSidebarClose');
+
+        function openSidebar() { sidebar.classList.add('show'); overlay.classList.add('show'); }
+        function closeSidebar() { sidebar.classList.remove('show'); overlay.classList.remove('show'); }
+
+        toggleBtn.addEventListener('click', openSidebar);
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // ---- Section Switching + Lazy Charts ----
+        const navItems = document.querySelectorAll('.dash-sidebar__item');
+        const sections = document.querySelectorAll('.dash-content__section');
+        const initted = {};
+
+        window.switchSection = function(id) {
+            navItems.forEach(i => i.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            document.querySelector('[data-section="' + id + '"]').classList.add('active');
+            document.getElementById('section-' + id).classList.add('active');
+            if (!initted[id]) { initted[id] = true; initSectionCharts(id); }
+            closeSidebar();
+        };
+
+        navItems.forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchSection(this.dataset.section);
+            });
+        });
+
+        // ---- Chart Defaults ----
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#8C7E6E';
+
+        var gold = '#D4A373';
+        var green = '#22c55e';
+        var primary = '#1B4D3E';
+        var blue = '#3b82f6';
+        var purple = '#a855f7';
+        var red = '#ef4444';
+        var creamBg = 'rgba(212,163,115,0.08)';
+
+        function initSectionCharts(id) {
+            if (id === 'overview') initOverviewCharts();
+            else if (id === 'production') initProductionCharts();
+            else if (id === 'consumption') initConsumptionCharts();
+            else if (id === 'savings') initSavingsCharts();
+        }
+
+        function initOverviewCharts() {
+            new Chart(document.getElementById('prodChartOverview'), {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Production',
+                        data: [4.2, 5.1, 3.8, 6.0, 5.8, 4.5, 6.2],
+                        borderColor: gold,
+                        backgroundColor: creamBg,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: gold,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('savingsChartOverview'), {
+                type: 'bar',
+                data: {
+                    labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+                    datasets: [{
+                        label: 'Savings ($)',
+                        data: [120, 145, 160, 155, 180, 186],
+                        backgroundColor: 'rgba(27,77,62,0.7)',
+                        borderRadius: 6,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('sourceChartOverview'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Solar', 'Wind', 'Grid', 'Battery'],
+                    datasets: [{
+                        data: [62, 18, 12, 8],
+                        backgroundColor: [gold, '#3b82f6', '#8C7E6E', '#22c55e'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { padding: 16, usePointStyle: true, pointStyle: 'circle' } }
+                    },
+                    cutout: '68%'
+                }
+            });
+        }
+
+        function initProductionCharts() {
+            new Chart(document.getElementById('prodChartDetail'), {
+                type: 'line',
+                data: {
+                    labels: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'],
+                    datasets: [{
+                        label: 'Solar',
+                        data: [0.2, 0.8, 1.8, 3.2, 4.1, 4.8, 5.2, 5.0, 4.6, 3.8, 2.8, 1.6, 0.6, 0.1],
+                        borderColor: gold,
+                        backgroundColor: creamBg,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 3
+                    }, {
+                        label: 'Wind',
+                        data: [0.6, 0.5, 0.7, 0.9, 1.1, 1.0, 0.8, 0.6, 0.7, 0.9, 1.2, 1.0, 0.8, 0.5],
+                        borderColor: blue,
+                        backgroundColor: 'rgba(59,130,246,0.08)',
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top', labels: { usePointStyle: true, pointStyle: 'circle' } } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('prodSourceChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Solar PV', 'Wind Turbine', 'Grid Import', 'Battery Storage'],
+                    datasets: [{
+                        data: [58, 22, 12, 8],
+                        backgroundColor: [gold, blue, '#8C7E6E', green],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true, pointStyle: 'circle' } }
+                    },
+                    cutout: '65%'
+                }
+            });
+
+            new Chart(document.getElementById('prodCompareChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+                    datasets: [{
+                        label: 'This Week',
+                        data: [4.2, 5.1, 3.8, 6.0, 5.8, 4.5, 6.2],
+                        backgroundColor: 'rgba(212,163,115,0.7)',
+                        borderRadius: 4
+                    }, {
+                        label: 'Last Week',
+                        data: [3.8, 4.2, 4.0, 5.2, 5.0, 4.1, 5.5],
+                        backgroundColor: 'rgba(27,77,62,0.5)',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top', labels: { usePointStyle: true } } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initConsumptionCharts() {
+            new Chart(document.getElementById('consumptionTrendChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+                    datasets: [{
+                        label: 'Consumption',
+                        data: [22.4, 24.1, 21.8, 25.6, 23.2, 28.4, 26.0],
+                        borderColor: blue,
+                        backgroundColor: 'rgba(59,130,246,0.08)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: blue,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }, {
+                        label: 'Production',
+                        data: [4.2, 5.1, 3.8, 6.0, 5.8, 4.5, 6.2],
+                        borderColor: gold,
+                        backgroundColor: 'rgba(212,163,115,0.08)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: gold,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top', labels: { usePointStyle: true } } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('peakHoursChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['12am','2am','4am','6am','8am','10am','12pm','2pm','4pm','6pm','8pm','10pm'],
+                    datasets: [{
+                        label: 'Avg kWh',
+                        data: [1.2, 1.0, 0.9, 1.5, 2.8, 2.2, 1.8, 2.5, 3.2, 2.8, 2.0, 1.4],
+                        backgroundColor: function(ctx) {
+                            var val = ctx.raw;
+                            if (val >= 2.8) return 'rgba(212,163,115,0.8)';
+                            if (val >= 1.8) return 'rgba(27,77,62,0.6)';
+                            return 'rgba(140,126,110,0.4)';
+                        },
+                        borderRadius: 4,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('applianceChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['HVAC', 'Lighting', 'Appliances', 'Electronics', 'Water Heater', 'Other'],
+                    datasets: [{
+                        data: [32, 18, 22, 14, 10, 4],
+                        backgroundColor: [blue, gold, green, purple, '#f59e0b', '#8C7E6E'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { padding: 12, usePointStyle: true, pointStyle: 'circle' } }
+                    },
+                    cutout: '62%'
+                }
+            });
+        }
+
+        function initSavingsCharts() {
+            new Chart(document.getElementById('monthlySavingsChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                    datasets: [{
+                        label: 'Savings ($)',
+                        data: [120, 145, 160, 155, 180, 186, 192, 178, 165, 150, 135, 140],
+                        backgroundColor: 'rgba(212,163,115,0.7)',
+                        borderRadius: 6,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('impactChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                    datasets: [{
+                        label: 'CO\u2082 Saved (tons)',
+                        data: [0.8, 1.0, 1.2, 1.5, 1.8, 2.0, 2.2, 2.4, 2.1, 1.9, 1.6, 1.4],
+                        borderColor: green,
+                        backgroundColor: 'rgba(34,197,94,0.08)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: green,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }, {
+                        label: 'Cumulative',
+                        data: [0.8, 1.8, 3.0, 4.5, 6.3, 8.3, 10.5, 12.9, 15.0, 16.9, 18.5, 19.9],
+                        borderColor: primary,
+                        backgroundColor: 'rgba(27,77,62,0.06)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: primary,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 3,
+                        borderDash: [5, 5],
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top', labels: { usePointStyle: true } } },
+                    scales: {
+                        y: { beginAtZero: true, position: 'left', grid: { color: 'rgba(0,0,0,0.04)' }, title: { display: true, text: 'Monthly (tons)' } },
+                        y1: { beginAtZero: true, position: 'right', grid: { display: false }, title: { display: true, text: 'Cumulative (tons)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        // ---- Init overview charts on load ----
+        initted.overview = true;
+        initOverviewCharts();
+    </script>
+
+</body>
+
+</html>

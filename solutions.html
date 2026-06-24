@@ -313,7 +313,7 @@
                                 <div class="solutions-carbon__card-icon"><i class="fa-solid fa-globe"></i></div>
                                 <h4>Certified Carbon Neutral</h4>
                                 <p>We've helped 200+ organizations achieve carbon neutrality with verified offsets and credible reduction strategies.</p>
-                                <a href="#" class="primary-btn">Get Your Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="404.html" class="primary-btn">Get Your Assessment <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -400,8 +400,8 @@
                     <h2 class="solutions-cta__title reveal">Ready to Build Your <span class="gradient-text">Energy Future?</span></h2>
                     <p class="solutions-cta__desc reveal reveal-delay-1">Let's design a customized renewable energy solution that meets your goals, budget, and timeline.</p>
                     <div class="solutions-cta__actions reveal reveal-delay-2">
-                        <a href="signup.html" class="primary-btn">Start Your Project <i class="fa-solid fa-arrow-right"></i></a>
-                        <a href="#solutions-hero" class="secondary-btn">Schedule a Consultation</a>
+                        <a href="404.html" class="primary-btn">Start Your Project <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="404.html" class="secondary-btn">Schedule a Consultation</a>
                     </div>
                 </div>
             </section>
@@ -417,10 +417,10 @@
                         </a>
                         <p>Empowering a sustainable future with innovative renewable energy solutions. Trusted by industry leaders worldwide.</p>
                         <div class="footer__social">
-                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                         </div>
                     </div>
                     <div>
@@ -436,20 +436,21 @@
                     <div>
                         <h4 class="footer__heading">Solutions</h4>
                         <ul class="footer__links">
-                            <li><a href="#">Solar Energy</a></li>
-                            <li><a href="#">Wind Power</a></li>
-                            <li><a href="#">Hydroelectric</a></li>
-                            <li><a href="#">Energy Storage</a></li>
-                            <li><a href="#">Smart Grids</a></li>
+                            <li><a href="404.html">Solar Energy</a></li>
+                            <li><a href="404.html">Wind Power</a></li>
+                            <li><a href="404.html">Hydroelectric</a></li>
+                            <li><a href="404.html">Energy Storage</a></li>
+                            <li><a href="404.html">Smart Grids</a></li>
                         </ul>
                     </div>
                     <div class="footer__newsletter">
                         <h4 class="footer__heading">Stay Updated</h4>
                         <p>Subscribe to our newsletter for the latest in renewable energy innovation.</p>
-                        <form class="footer__form">
+                        <form class="footer__form" onsubmit="return handleNewsletter(this)">
                             <input type="email" placeholder="Enter your email" required>
                             <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
                         </form>
+                        <div class="footer__success" id="footerSuccess"></div>
                     </div>
                 </div>
                 <div class="footer__bottom">
@@ -466,6 +467,28 @@
 
     <script src="assets/js/header.js"></script>
     <script src="assets/js/counter.js"></script>
+    <script>
+        function handleNewsletter(form) {
+            const input = form.querySelector('input[type="email"]');
+            const msg = document.getElementById('footerSuccess');
+            const email = input.value.trim();
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !re.test(email)) {
+                input.focus();
+                msg.textContent = 'Please enter a valid email address.';
+                msg.className = 'footer__success footer__success--error';
+                msg.style.display = 'flex';
+                setTimeout(() => { msg.style.display = 'none'; }, 3000);
+                return false;
+            }
+            msg.textContent = 'Thank you! You\'ve been subscribed.';
+            msg.className = 'footer__success';
+            msg.style.display = 'flex';
+            setTimeout(() => { msg.style.display = 'none'; }, 3000);
+            form.reset();
+            return false;
+        }
+    </script>
 
 </body>
 

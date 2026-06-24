@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Stackly Admin</title>
+    <meta name="description" content="Admin energy dashboard. Manage users, monitor grid, and generate reports.">
+    <link rel="icon" href="assets/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="dash-sidebar" id="dashSidebar">
+            <div class="dash-sidebar__header">
+                <a href="index.html" class="dash-sidebar__logo">
+                    <img src="assets/logo-stackly.webp" alt="Stackly">
+                </a>
+                <button class="dash-sidebar__close" id="dashSidebarClose" aria-label="Close sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <nav class="dash-sidebar__nav">
+                <div class="dash-sidebar__label">Admin Menu</div>
+
+                <a href="#" class="dash-sidebar__item active" data-section="overview">
+                    <i class="fa-solid fa-chart-pie"></i> Overview
+                </a>
+                <a href="#" class="dash-sidebar__item" data-section="users">
+                    <i class="fa-solid fa-users"></i> User Management
+                </a>
+                <a href="#" class="dash-sidebar__item" data-section="grid">
+                    <i class="fa-solid fa-bolt"></i> Energy Grid
+                </a>
+                <a href="#" class="dash-sidebar__item" data-section="reports">
+                    <i class="fa-solid fa-file-lines"></i> Reports
+                </a>
+                <a href="#" class="dash-sidebar__item" data-section="settings">
+                    <i class="fa-solid fa-gear"></i> System Settings
+                </a>
+            </nav>
+
+            <div class="dash-sidebar__footer">
+                <a href="#" class="dash-sidebar__logout" id="dashLogout">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Overlay -->
+        <div class="dash-overlay" id="dashOverlay"></div>
+
+        <!-- Main -->
+        <main class="dash-main">
+
+            <!-- Topbar -->
+            <header class="dash-topbar">
+                <div class="dash-topbar__left">
+                    <button class="dash-topbar__toggle" id="dashToggle" aria-label="Toggle sidebar">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h1 class="dash-topbar__title">Admin Dashboard</h1>
+                </div>
+                <div class="dash-topbar__right">
+                    <div class="dash-topbar__search">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="dash-topbar__notif">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="dash-topbar__notif-dot"></span>
+                    </div>
+                    <img src="" alt="Avatar" class="dash-topbar__avatar" id="userAvatarTop">
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="dash-content">
+
+                <!-- ===== OVERVIEW ===== -->
+                <section class="dash-content__section active" id="section-overview">
+                    <div class="dash-content__header">
+                        <h2>Overview</h2>
+                        <p>Platform performance at a glance.</p>
+                    </div>
+
+                    <div class="dash-welcome">
+                        <div class="dash-welcome__content">
+                            <h2>Good morning, <span id="userNameWelcome">Admin</span>! &#9889;</h2>
+                            <p>The grid is operating at 86% capacity. 12 new users joined in the last 24 hours.</p>
+                            <a href="404.html" class="primary-btn">Manage Users <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="dash-welcome__icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                    </div>
+
+                    <div class="dash-stats">
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--gold"><i class="fa-solid fa-users"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 12%</span>
+                            </div>
+                            <div class="dash-stat__value">1,847</div>
+                            <div class="dash-stat__label">Total Users</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--green"><i class="fa-solid fa-solar-panel"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 8%</span>
+                            </div>
+                            <div class="dash-stat__value">1,203</div>
+                            <div class="dash-stat__label">Active Installations</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--blue"><i class="fa-solid fa-bolt"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 5%</span>
+                            </div>
+                            <div class="dash-stat__value">4.6 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">MW</small></div>
+                            <div class="dash-stat__label">Grid Load</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--purple"><i class="fa-solid fa-coins"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 18%</span>
+                            </div>
+                            <div class="dash-stat__value">$142.8K</div>
+                            <div class="dash-stat__label">Monthly Revenue</div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-2">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Grid Load</h3>
+                                    <span>Last 24 hours</span>
+                                </div>
+                                <div class="dash-chart-card__period">
+                                    <button class="active">24H</button>
+                                    <button>7D</button>
+                                    <button>30D</button>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="gridLoadOverview"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>New Users</h3>
+                                    <span>Registrations this week</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="newUsersChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-table-card">
+                        <div class="dash-table-card__header">
+                            <h3>Recent Signups</h3>
+                            <a href="404.html">View All <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Plan</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=D4A373&color=1B4D3E&size=64" alt=""><div><strong>Sarah Johnson</strong></div></div></td>
+                                    <td>sarah.j@example.com</td>
+                                    <td>Premium</td>
+                                    <td><span class="dash-table__status dash-table__status--active"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Active</span></td>
+                                    <td>Today</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Mike+Chen&background=1B4D3E&color=fff&size=64" alt=""><div><strong>Mike Chen</strong></div></div></td>
+                                    <td>mike.chen@example.com</td>
+                                    <td>Basic</td>
+                                    <td><span class="dash-table__status dash-table__status--active"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Active</span></td>
+                                    <td>Yesterday</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Emily+Davis&background=3b82f6&color=fff&size=64" alt=""><div><strong>Emily Davis</strong></div></div></td>
+                                    <td>emily.d@example.com</td>
+                                    <td>Premium</td>
+                                    <td><span class="dash-table__status dash-table__status--pending"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Pending</span></td>
+                                    <td>2 days ago</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Alex+Martinez&background=a855f7&color=fff&size=64" alt=""><div><strong>Alex Martinez</strong></div></div></td>
+                                    <td>alex.m@example.com</td>
+                                    <td>Enterprise</td>
+                                    <td><span class="dash-table__status dash-table__status--active"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Active</span></td>
+                                    <td>3 days ago</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Lisa+Park&background=22c55e&color=fff&size=64" alt=""><div><strong>Lisa Park</strong></div></div></td>
+                                    <td>lisa.p@example.com</td>
+                                    <td>Basic</td>
+                                    <td><span class="dash-table__status dash-table__status--offline"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Offline</span></td>
+                                    <td>4 days ago</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ===== USER MANAGEMENT ===== -->
+                <section class="dash-content__section" id="section-users">
+                    <div class="dash-content__header">
+                        <h2>User Management</h2>
+                        <p>View, filter, and manage all platform users.</p>
+                    </div>
+
+                    <div class="dash-users-header">
+                        <div class="dash-topbar__search">
+                            <i class="fa-solid fa-search"></i>
+                            <input type="text" placeholder="Search users...">
+                        </div>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                            <select style="padding:10px 16px;border:1px solid var(--gray-200);border-radius:var(--radius-sm);font-size:14px;background:var(--white);color:var(--gray-700);">
+                                <option>All Plans</option>
+                                <option>Basic</option>
+                                <option>Premium</option>
+                                <option>Enterprise</option>
+                            </select>
+                            <select style="padding:10px 16px;border:1px solid var(--gray-200);border-radius:var(--radius-sm);font-size:14px;background:var(--white);color:var(--gray-700);">
+                                <option>All Status</option>
+                                <option>Active</option>
+                                <option>Pending</option>
+                                <option>Offline</option>
+                            </select>
+                            <button class="primary-btn" style="background:var(--primary);color:var(--white);padding:10px 20px;border:none;border-radius:var(--radius-sm);font-weight:600;cursor:pointer;" onclick="location.href='404.html'"><i class="fa-solid fa-download"></i> Export</button>
+                        </div>
+                    </div>
+
+                    <div class="dash-table-card">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Role</th>
+                                    <th>Plan</th>
+                                    <th>Status</th>
+                                    <th>Joined</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=John+Doe&background=D4A373&color=1B4D3E&size=64" alt=""><div><strong>John Doe</strong><span>john.doe@example.com</span></div></div></td>
+                                    <td>User</td>
+                                    <td>Premium</td>
+                                    <td><span class="dash-table__status dash-table__status--active"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Active</span></td>
+                                    <td>Jan 2024</td>
+                                    <td><a href="404.html" style="color:var(--primary);font-weight:600;font-size:13px;">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=D4A373&color=1B4D3E&size=64" alt=""><div><strong>Sarah Johnson</strong><span>sarah.j@example.com</span></div></div></td>
+                                    <td>User</td>
+                                    <td>Premium</td>
+                                    <td><span class="dash-table__status dash-table__status--active"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Active</span></td>
+                                    <td>Mar 2025</td>
+                                    <td><a href="404.html" style="color:var(--primary);font-weight:600;font-size:13px;">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Mike+Chen&background=1B4D3E&color=fff&size=64" alt=""><div><strong>Mike Chen</strong><span>mike.chen@example.com</span></div></div></td>
+                                    <td>Admin</td>
+                                    <td>Enterprise</td>
+                                    <td><span class="dash-table__status dash-table__status--active"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Active</span></td>
+                                    <td>Feb 2024</td>
+                                    <td><a href="404.html" style="color:var(--primary);font-weight:600;font-size:13px;">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Emily+Davis&background=3b82f6&color=fff&size=64" alt=""><div><strong>Emily Davis</strong><span>emily.d@example.com</span></div></div></td>
+                                    <td>User</td>
+                                    <td>Premium</td>
+                                    <td><span class="dash-table__status dash-table__status--pending"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Pending</span></td>
+                                    <td>Jun 2025</td>
+                                    <td><a href="404.html" style="color:var(--primary);font-weight:600;font-size:13px;">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Mike+Chen&background=1B4D3E&color=fff&size=64" alt=""><div><strong>Mike Chen</strong><span>mike.chen@example.com</span></div></div></td>
+                                    <td>Admin</td>
+                                    <td>Enterprise</td>
+                                    <td><span class="dash-table__status dash-table__status--active"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Active</span></td>
+                                    <td>Feb 2024</td>
+                                    <td><a href="404.html" style="color:var(--primary);font-weight:600;font-size:13px;">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Lisa+Park&background=22c55e&color=fff&size=64" alt=""><div><strong>Lisa Park</strong><span>lisa.p@example.com</span></div></div></td>
+                                    <td>User</td>
+                                    <td>Basic</td>
+                                    <td><span class="dash-table__status dash-table__status--offline"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Offline</span></td>
+                                    <td>Aug 2024</td>
+                                    <td><a href="404.html" style="color:var(--primary);font-weight:600;font-size:13px;">Edit</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="dash-table__user"><img src="https://ui-avatars.com/api/?name=Emily+Davis&background=3b82f6&color=fff&size=64" alt=""><div><strong>Emily Davis</strong><span>emily.d@example.com</span></div></div></td>
+                                    <td>User</td>
+                                    <td>Premium</td>
+                                    <td><span class="dash-table__status dash-table__status--pending"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Pending</span></td>
+                                    <td>Jun 2025</td>
+                                    <td><a href="404.html" style="color:var(--primary);font-weight:600;font-size:13px;">Edit</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- ===== ENERGY GRID ===== -->
+                <section class="dash-content__section" id="section-grid">
+                    <div class="dash-content__header">
+                        <h2>Energy Grid</h2>
+                        <p>Monitor grid-wide renewable energy generation and distribution.</p>
+                    </div>
+
+                    <div class="dash-stats">
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--gold"><i class="fa-solid fa-tower-broadcast"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 3%</span>
+                            </div>
+                            <div class="dash-stat__value">8.2 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">MW</small></div>
+                            <div class="dash-stat__label">Total Capacity</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--blue"><i class="fa-solid fa-bolt"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 5%</span>
+                            </div>
+                            <div class="dash-stat__value">4.6 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">MW</small></div>
+                            <div class="dash-stat__label">Current Load</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--green"><i class="fa-solid fa-leaf"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--up">&#8593; 6%</span>
+                            </div>
+                            <div class="dash-stat__value">72%</div>
+                            <div class="dash-stat__label">Renewable Mix</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--purple"><i class="fa-solid fa-clock"></i></div>
+                                <span class="dash-stat__trend dash-stat__trend--down">&#8595; 2%</span>
+                            </div>
+                            <div class="dash-stat__value">6.8 <small style="font-size:14px;color:var(--gray-500);font-weight:400;">MW</small></div>
+                            <div class="dash-stat__label">Peak Demand</div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-full">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Load Forecast</h3>
+                                    <span>Projected vs actual grid load (MW)</span>
+                                </div>
+                                <div class="dash-chart-card__period">
+                                    <button class="active">Today</button>
+                                    <button>Week</button>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="loadForecastChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-2">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Energy Source Mix</h3>
+                                    <span>Grid composition by source</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="sourceMixChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Regional Distribution</h3>
+                                    <span>Generation by region (MWh)</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="regionalChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash-chart-card">
+                        <div class="dash-chart-card__header">
+                            <div>
+                                <h3>Source Performance</h3>
+                                <span>Live breakdown by energy type</span>
+                            </div>
+                        </div>
+                        <div class="dash-source-list" style="padding:8px 0;">
+                            <div class="dash-source-item">
+                                <div class="dash-source-item__icon" style="background:rgba(212,163,115,0.12);color:var(--accent);"><i class="fa-solid fa-sun"></i></div>
+                                <div class="dash-source-item__info">
+                                    <strong>Solar PV</strong>
+                                    <div class="dash-source-item__bar">
+                                        <div class="dash-source-item__bar-fill" style="width:72%;background:var(--accent);"></div>
+                                    </div>
+                                </div>
+                                <span class="dash-source-item__value">3.3 MW</span>
+                            </div>
+                            <div class="dash-source-item">
+                                <div class="dash-source-item__icon" style="background:rgba(59,130,246,0.12);color:#3b82f6;"><i class="fa-solid fa-wind"></i></div>
+                                <div class="dash-source-item__info">
+                                    <strong>Wind</strong>
+                                    <div class="dash-source-item__bar">
+                                        <div class="dash-source-item__bar-fill" style="width:48%;background:#3b82f6;"></div>
+                                    </div>
+                                </div>
+                                <span class="dash-source-item__value">2.2 MW</span>
+                            </div>
+                            <div class="dash-source-item">
+                                <div class="dash-source-item__icon" style="background:rgba(34,197,94,0.12);color:#22c55e;"><i class="fa-solid fa-water"></i></div>
+                                <div class="dash-source-item__info">
+                                    <strong>Hydroelectric</strong>
+                                    <div class="dash-source-item__bar">
+                                        <div class="dash-source-item__bar-fill" style="width:35%;background:#22c55e;"></div>
+                                    </div>
+                                </div>
+                                <span class="dash-source-item__value">1.6 MW</span>
+                            </div>
+                            <div class="dash-source-item">
+                                <div class="dash-source-item__icon" style="background:rgba(168,85,247,0.12);color:#a855f7;"><i class="fa-solid fa-database"></i></div>
+                                <div class="dash-source-item__info">
+                                    <strong>Battery Storage</strong>
+                                    <div class="dash-source-item__bar">
+                                        <div class="dash-source-item__bar-fill" style="width:24%;background:#a855f7;"></div>
+                                    </div>
+                                </div>
+                                <span class="dash-source-item__value">1.1 MW</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== REPORTS ===== -->
+                <section class="dash-content__section" id="section-reports">
+                    <div class="dash-content__header">
+                        <h2>Reports</h2>
+                        <p>Generate and download platform reports.</p>
+                    </div>
+
+                    <div class="dash-stats">
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--gold"><i class="fa-solid fa-file-pdf"></i></div>
+                            </div>
+                            <div class="dash-stat__value">24</div>
+                            <div class="dash-stat__label">Reports Generated</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--green"><i class="fa-solid fa-download"></i></div>
+                            </div>
+                            <div class="dash-stat__value">186</div>
+                            <div class="dash-stat__label">Total Downloads</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--blue"><i class="fa-solid fa-calendar"></i></div>
+                            </div>
+                            <div class="dash-stat__value">12</div>
+                            <div class="dash-stat__label">Scheduled Reports</div>
+                        </div>
+                        <div class="dash-stat">
+                            <div class="dash-stat__top">
+                                <div class="dash-stat__icon dash-stat__icon--purple"><i class="fa-solid fa-chart-simple"></i></div>
+                            </div>
+                            <div class="dash-stat__value">98.5%</div>
+                            <div class="dash-stat__label">Data Accuracy</div>
+                        </div>
+                    </div>
+
+                    <div class="dash-grid-2">
+                        <div class="dash-chart-card">
+                            <div class="dash-chart-card__header">
+                                <div>
+                                    <h3>Monthly Report Metrics</h3>
+                                    <span>Revenue, users, and energy over time</span>
+                                </div>
+                            </div>
+                            <div class="dash-chart-card__body">
+                                <canvas id="reportMetricsChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div style="display:flex;flex-direction:column;gap:16px;">
+                            <div class="dash-report-card">
+                                <div class="dash-report-card__icon" style="background:rgba(212,163,115,0.12);color:var(--accent);">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+                                <div class="dash-report-card__info">
+                                    <h4>Monthly Energy Summary</h4>
+                                    <p>Complete overview of energy production, consumption, and savings for June 2025.</p>
+                                    <small>Last generated: Jun 24, 2025</small>
+                                </div>
+                            </div>
+                            <div class="dash-report-card">
+                                <div class="dash-report-card__icon" style="background:rgba(59,130,246,0.12);color:#3b82f6;">
+                                    <i class="fa-solid fa-users"></i>
+                                </div>
+                                <div class="dash-report-card__info">
+                                    <h4>User Growth Report</h4>
+                                    <p>Detailed analysis of user acquisition, retention, and plan distribution.</p>
+                                    <small>Last generated: Jun 22, 2025</small>
+                                </div>
+                            </div>
+                            <div class="dash-report-card">
+                                <div class="dash-report-card__icon" style="background:rgba(34,197,94,0.12);color:#22c55e;">
+                                    <i class="fa-solid fa-leaf"></i>
+                                </div>
+                                <div class="dash-report-card__info">
+                                    <h4>Environmental Impact</h4>
+                                    <p>Carbon offset, CO&#8322; reduction, and sustainability metrics for Q2 2025.</p>
+                                    <small>Last generated: Jun 20, 2025</small>
+                                </div>
+                            </div>
+                            <div class="dash-report-card">
+                                <div class="dash-report-card__icon" style="background:rgba(168,85,247,0.12);color:#a855f7;">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div class="dash-report-card__info">
+                                    <h4>Grid Performance</h4>
+                                    <p>Grid load, peak demand analysis, and renewable energy mix breakdown.</p>
+                                    <small>Last generated: Jun 18, 2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== SYSTEM SETTINGS ===== -->
+                <section class="dash-content__section" id="section-settings">
+                    <div class="dash-content__header">
+                        <h2>System Settings</h2>
+                        <p>Configure platform preferences and system parameters.</p>
+                    </div>
+
+                    <div class="dash-settings">
+                        <div class="dash-settings__card">
+                            <h3>General</h3>
+                            <p>Manage core platform settings.</p>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Maintenance Mode</strong>
+                                    <span>Prevent user access during maintenance</span>
+                                </div>
+                                <label class="dash-toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="dash-toggle__slider"></span>
+                                </label>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Email Notifications</strong>
+                                    <span>Send system alerts to admin email</span>
+                                </div>
+                                <label class="dash-toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="dash-toggle__slider"></span>
+                                </label>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>User Registration</strong>
+                                    <span>Allow new users to sign up</span>
+                                </div>
+                                <label class="dash-toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="dash-toggle__slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="dash-settings__card">
+                            <h3>Data & Backup</h3>
+                            <p>Configure data retention and backup schedules.</p>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Auto Backup</strong>
+                                    <span>Daily automated database backup</span>
+                                </div>
+                                <label class="dash-toggle">
+                                    <input type="checkbox" checked>
+                                    <span class="dash-toggle__slider"></span>
+                                </label>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Data Retention</strong>
+                                    <span>Keep historical data for 12 months</span>
+                                </div>
+                                <select style="padding:8px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:13px;background:var(--cream);color:var(--gray-700);">
+                                    <option>3 Months</option>
+                                    <option>6 Months</option>
+                                    <option selected>12 Months</option>
+                                    <option>24 Months</option>
+                                </select>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Export Format</strong>
+                                    <span>Default format for exported reports</span>
+                                </div>
+                                <select style="padding:8px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:13px;background:var(--cream);color:var(--gray-700);">
+                                    <option selected>PDF</option>
+                                    <option>CSV</option>
+                                    <option>Excel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="dash-settings__card">
+                            <h3>Security</h3>
+                            <p>Manage API keys and access controls.</p>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Two-Factor Auth</strong>
+                                    <span>Require 2FA for admin accounts</span>
+                                </div>
+                                <label class="dash-toggle">
+                                    <input type="checkbox">
+                                    <span class="dash-toggle__slider"></span>
+                                </label>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>API Key</strong>
+                                    <span>sk_live_••••••••••••••••</span>
+                                </div>
+                                <button style="padding:8px 16px;border:1px solid var(--gray-200);border-radius:8px;background:var(--white);font-size:13px;font-weight:600;color:var(--gray-700);cursor:pointer;">Regenerate</button>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Session Timeout</strong>
+                                    <span>Auto-logout after inactivity</span>
+                                </div>
+                                <select style="padding:8px 14px;border:1px solid var(--gray-200);border-radius:8px;font-size:13px;background:var(--cream);color:var(--gray-700);">
+                                    <option>30 minutes</option>
+                                    <option selected>60 minutes</option>
+                                    <option>120 minutes</option>
+                                    <option>Never</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="dash-settings__card">
+                            <h3>System Information</h3>
+                            <p>Current system status and version details.</p>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Platform Version</strong>
+                                    <span>Current deployed version</span>
+                                </div>
+                                <span style="font-weight:600;color:var(--gray-900);font-size:14px;">v3.2.1</span>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Database Status</strong>
+                                    <span>PostgreSQL cluster health</span>
+                                </div>
+                                <span class="dash-table__status dash-table__status--active"><i class="fa-solid fa-circle" style="font-size:8px;"></i> Healthy</span>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Last Deploy</strong>
+                                    <span>Most recent deployment</span>
+                                </div>
+                                <span style="font-size:13px;color:var(--gray-500);">Jun 23, 2025 14:32 UTC</span>
+                            </div>
+                            <div class="dash-settings__row">
+                                <div class="dash-settings__row-left">
+                                    <strong>Uptime</strong>
+                                    <span>Service availability</span>
+                                </div>
+                                <span style="font-weight:600;color:#22c55e;font-size:14px;">99.97%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script>
+        // ---- User Data from Session ----
+        var userData = (function() {
+            try {
+                var d = JSON.parse(sessionStorage.getItem('stackly_user'));
+                if (d && d.name) return d;
+            } catch(_) {}
+            return null;
+        })();
+
+        if (!userData) {
+            window.location.href = 'login.html';
+        }
+
+        function updateAvatar(img, name) {
+            img.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=D4A373&color=1B4D3E&size=144';
+        }
+
+        document.querySelectorAll('.dash-topbar__avatar').forEach(function(img) {
+            updateAvatar(img, userData.name);
+        });
+        document.getElementById('userNameWelcome') && (document.getElementById('userNameWelcome').textContent = userData.name.split(' ')[0]);
+
+        // ---- Logout ----
+        document.getElementById('dashLogout').addEventListener('click', function(e) {
+            e.preventDefault();
+            sessionStorage.removeItem('stackly_user');
+            window.location.href = 'index.html';
+        });
+
+        // ---- Sidebar Toggle ----
+        var sidebar = document.getElementById('dashSidebar');
+        var overlay = document.getElementById('dashOverlay');
+        var toggleBtn = document.getElementById('dashToggle');
+        var closeBtn = document.getElementById('dashSidebarClose');
+
+        function openSidebar() { sidebar.classList.add('show'); overlay.classList.add('show'); }
+        function closeSidebar() { sidebar.classList.remove('show'); overlay.classList.remove('show'); }
+
+        toggleBtn.addEventListener('click', openSidebar);
+        closeBtn.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // ---- Section Switching + Lazy Charts ----
+        var navItems = document.querySelectorAll('.dash-sidebar__item');
+        var sections = document.querySelectorAll('.dash-content__section');
+        var initted = {};
+
+        window.switchSection = function(id) {
+            navItems.forEach(function(i) { i.classList.remove('active'); });
+            sections.forEach(function(s) { s.classList.remove('active'); });
+            document.querySelector('[data-section="' + id + '"]').classList.add('active');
+            document.getElementById('section-' + id).classList.add('active');
+            if (!initted[id]) { initted[id] = true; initSectionCharts(id); }
+            closeSidebar();
+        };
+
+        navItems.forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                switchSection(this.dataset.section);
+            });
+        });
+
+        // ---- Chart Defaults ----
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#8C7E6E';
+
+        var gold = '#D4A373';
+        var green = '#22c55e';
+        var primary = '#1B4D3E';
+        var blue = '#3b82f6';
+        var purple = '#a855f7';
+        var red = '#ef4444';
+        var creamBg = 'rgba(212,163,115,0.08)';
+
+        function initSectionCharts(id) {
+            if (id === 'overview') initOverviewCharts();
+            else if (id === 'grid') initGridCharts();
+            else if (id === 'reports') initReportsCharts();
+        }
+
+        function initOverviewCharts() {
+            new Chart(document.getElementById('gridLoadOverview'), {
+                type: 'line',
+                data: {
+                    labels: ['0','2','4','6','8','10','12','14','16','18','20','22'],
+                    datasets: [{
+                        label: 'Grid Load (MW)',
+                        data: [3.2, 2.8, 2.6, 3.0, 3.8, 4.2, 4.5, 4.8, 4.6, 4.3, 3.9, 3.4],
+                        borderColor: gold,
+                        backgroundColor: creamBg,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: gold,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('newUsersChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+                    datasets: [{
+                        label: 'New Users',
+                        data: [12, 18, 8, 15, 22, 10, 6],
+                        backgroundColor: 'rgba(27,77,62,0.7)',
+                        borderRadius: 6,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initGridCharts() {
+            new Chart(document.getElementById('loadForecastChart'), {
+                type: 'line',
+                data: {
+                    labels: ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'],
+                    datasets: [{
+                        label: 'Actual Load',
+                        data: [2.8, 3.2, 3.8, 4.1, 4.5, 4.6, 4.4, 4.7, 4.8, 4.5, 4.2, 4.0, 3.6, 3.2, 2.9],
+                        borderColor: gold,
+                        backgroundColor: creamBg,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: gold,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4
+                    }, {
+                        label: 'Projected Load',
+                        data: [2.6, 3.0, 3.5, 3.9, 4.3, 4.5, 4.6, 4.9, 5.0, 4.7, 4.4, 4.1, 3.7, 3.3, 3.0],
+                        borderColor: blue,
+                        backgroundColor: 'rgba(59,130,246,0.06)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: blue,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        borderDash: [6, 4]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top', labels: { usePointStyle: true } } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('sourceMixChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Solar', 'Wind', 'Hydro', 'Battery', 'Gas Backup'],
+                    datasets: [{
+                        data: [38, 26, 18, 12, 6],
+                        backgroundColor: [gold, blue, green, purple, '#8C7E6E'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { padding: 14, usePointStyle: true, pointStyle: 'circle' } }
+                    },
+                    cutout: '65%'
+                }
+            });
+
+            new Chart(document.getElementById('regionalChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['North', 'South', 'East', 'West', 'Central'],
+                    datasets: [{
+                        label: 'Generation (MWh)',
+                        data: [2.8, 3.4, 2.2, 4.1, 1.9],
+                        backgroundColor: [
+                            'rgba(212,163,115,0.7)',
+                            'rgba(27,77,62,0.7)',
+                            'rgba(59,130,246,0.7)',
+                            'rgba(34,197,94,0.7)',
+                            'rgba(168,85,247,0.7)'
+                        ],
+                        borderRadius: 6,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.04)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initReportsCharts() {
+            new Chart(document.getElementById('reportMetricsChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+                    datasets: [{
+                        label: 'Revenue ($K)',
+                        data: [85, 92, 108, 115, 128, 142],
+                        borderColor: gold,
+                        backgroundColor: creamBg,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: gold,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        yAxisID: 'y'
+                    }, {
+                        label: 'Active Users',
+                        data: [680, 720, 810, 890, 1020, 1203],
+                        borderColor: primary,
+                        backgroundColor: 'rgba(27,77,62,0.06)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: primary,
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'top', labels: { usePointStyle: true } } },
+                    scales: {
+                        y: { beginAtZero: true, position: 'left', grid: { color: 'rgba(0,0,0,0.04)' }, title: { display: true, text: 'Revenue ($K)' } },
+                        y1: { beginAtZero: true, position: 'right', grid: { display: false }, title: { display: true, text: 'Users' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        // ---- Init overview charts on load ----
+        initted.overview = true;
+        initOverviewCharts();
+    </script>
+
+</body>
+
+</html>

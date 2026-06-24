@@ -351,6 +351,18 @@
                 e.preventDefault();
                 if (!validate()) return;
 
+                const role = getRole();
+                const name = nameInput.value.trim();
+                const email = emailInput.value.trim();
+
+                sessionStorage.setItem('stackly_user', JSON.stringify({
+                    name: name,
+                    email: email,
+                    role: role,
+                    plan: role === 'admin' ? 'Enterprise' : 'Premium',
+                    memberSince: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })
+                }));
+
                 successMsg.classList.add('show');
                 form.style.display = 'none';
 
